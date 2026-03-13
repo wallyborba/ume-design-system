@@ -498,7 +498,7 @@
 
     /* Destructive */
     .btn-destructive {
-      background: #E53E3E;
+      background: var(--feedback-error-text);
       color: #FFF;
     }
 
@@ -646,7 +646,7 @@
     }
 
     .input-error {
-      border-color: #E53E3E !important;
+      border-color: var(--feedback-error-text) !important;
     }
 
     .input-error:focus {
@@ -662,7 +662,7 @@
     .input-error-msg {
       font-size: 12px;
       font-weight: 400;
-      color: #E53E3E;
+      color: var(--feedback-error-text);
     }
 
     .input-field:disabled {
@@ -837,7 +837,7 @@
 
     .badge-purple {
       background: rgba(151, 74, 253, 0.1);
-      color: #974AFD;
+      color: var(--ume-roxo);
     }
 
     .badge-neutral {
@@ -1107,7 +1107,7 @@
     }
 
     .alert-error .material-symbols-rounded {
-      color: #E53E3E;
+      color: var(--feedback-error-text);
     }
 
     .alert-warning {
@@ -2521,7 +2521,7 @@
               <div class="avatar avatar-md" style="background: var(--ume-verde-escuro);">AB</div>
               <div class="avatar avatar-md" style="background: var(--ume-roxo);">CM</div>
               <div class="avatar avatar-md" style="background: var(--ume-verde-medio);">LS</div>
-              <div class="avatar avatar-md" style="background: #E53E3E;">RK</div>
+              <div class="avatar avatar-md" style="background: var(--feedback-error-text);">RK</div>
               <div class="avatar avatar-md"
                 style="background: var(--border-strong); color: var(--text-primary); font-size: 11px;">+5</div>
             </div>
@@ -2601,7 +2601,7 @@
       <div class="section-header">
         <div class="overline">Components</div>
         <h2>Buttons</h2>
-        <p>5 variantes padrão shadcn + 2 variantes de marca (brand glow e gradient border).</p>
+        <p>5 variantes padrão shadcn + 2 variantes de marca (brilho e borda gradiente).</p>
       </div>
 
       <div class="comp-group">
@@ -2794,7 +2794,7 @@
       <div class="section-header">
         <div class="overline">Components</div>
         <h2>Cards</h2>
-        <p>7 variantes padrão + 4 variantes de marca (glass, gradient border, gradient top, glow).</p>
+        <p>7 variantes padrão + 4 variantes de marca (translúcido, borda gradiente, gradiente no topo, brilho).</p>
       </div>
 
       <div class="comp-label">Standard</div>
@@ -2863,7 +2863,7 @@
           <div class="card card-glass"
             style="background: rgba(255,255,255,0.22); backdrop-filter: blur(24px); border-color: rgba(255,255,255,0.25); box-shadow: 0 0 20px rgba(9,207,124,0.1);">
             <h4>Glass Level 3</h4>
-            <p>Destaque máximo com glow.</p>
+            <p>Destaque máximo com brilho.</p>
           </div>
         </div>
       </div>
@@ -3123,7 +3123,7 @@
       <div class="section-header">
         <div class="overline">Components</div>
         <h2>Skeleton / Loading</h2>
-        <p>Shimmer com tom verde sutil — referência ao cristal do grafismo.</p>
+        <p>Animação de carregamento com tom verde sutil — referência ao cristal do grafismo.</p>
       </div>
       <div class="comp-group">
         <div style="display: flex; gap: 16px; align-items: start;">
