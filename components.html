@@ -236,6 +236,7 @@
     .badge-neutral { background: rgba(0,0,0,0.06); color: var(--text-secondary); }
     /* ★ Brand: Gradient badge */
     .badge-brand { background: linear-gradient(135deg, rgba(9,207,124,0.12), rgba(151,74,253,0.08)); color: var(--ume-verde-escuro); border: 1px solid rgba(9,207,124,0.15); }
+    .dark .badge-brand { background: linear-gradient(135deg, rgba(9,207,124,0.2), rgba(151,74,253,0.15)); color: var(--ume-verde-claro); border: 1px solid rgba(9,207,124,0.25); }
 
     /* ═══ CARDS ═══ */
     .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -347,7 +348,7 @@
     .avatar-xl { width: 80px; height: 80px; font-size: 28px; }
 
     /* ═══ TABLE ═══ */
-    .table-wrap { background: var(--surface-raised); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-default); }
+    .table-wrap { background: var(--surface-raised); border-radius: 16px; overflow-x: auto; border: 1px solid var(--border-default); }
     .table-wrap table { width: 100%; border-collapse: collapse; }
     .table-wrap th { text-align: left; padding: 14px 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.03em; color: var(--text-muted); background: var(--surface-subtle); border-bottom: 1px solid var(--border-default); }
     .table-wrap td { padding: 14px 20px; font-size: 14px; font-weight: 300; border-bottom: 1px solid var(--border-default); }
@@ -369,7 +370,7 @@
 
     /* ═══ MODAL ═══ */
     .modal-overlay { background: rgba(0,0,0,0.5); border-radius: 20px; padding: 40px; display: flex; align-items: center; justify-content: center; min-height: 300px; }
-    .modal { background: var(--surface-raised); border-radius: 16px; padding: 32px; max-width: 440px; width: 100%; box-shadow: 0 16px 48px rgba(0,0,0,0.16); }
+    .modal { background: var(--surface-raised); border-radius: 16px; padding: 32px; max-width: 440px; width: 100%; box-shadow: 0 16px 48px rgba(0,0,0,0.16); color: var(--text-primary); }
     .modal h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px; color: var(--text-primary); }
     .modal p { font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px; }
     .modal-actions { display: flex; gap: 12px; justify-content: flex-end; }
@@ -485,20 +486,6 @@
       color: var(--text-muted);
       margin-bottom: 16px;
     }
-    .canvas-fade {
-      position: sticky;
-      right: 0;
-      top: 0;
-      width: 48px;
-      height: 100%;
-      pointer-events: none;
-      background: linear-gradient(90deg, transparent, var(--surface-subtle));
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: 2;
-    }
     .canvas-scroll-hint {
       font-size: 12px;
       color: var(--text-muted);
@@ -604,7 +591,7 @@
     <a href="#alerts">Alerts</a>
     <a href="#avatars">Avatars</a>
     <a href="#toast">Toast</a>
-    <a href="#modal">Modal</a>
+    <a href="#modal">Dialog</a>
     <a href="#tooltip">Tooltip</a>
     <a href="#tabs">Tabs</a>
     <a href="#breadcrumb">Breadcrumb</a>
@@ -635,7 +622,6 @@
         </div>
       </div>
       <div class="component-canvas" style="position: relative;">
-        <div class="canvas-fade"></div>
         <div class="canvas-grid">
 
           <!-- Cell 1: Card + Avatar + Badge -->
@@ -1035,13 +1021,13 @@
             </div>
           </div>
 
-          <!-- Cell 20: Modal mini -->
-          <div class="canvas-cell">
+          <!-- Cell 20: Dialog -->
+          <div class="canvas-cell canvas-cell--wide">
             <div class="canvas-cell-title">Dialog</div>
-            <div style="background: rgba(0,0,0,0.4); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: center;">
-              <div style="background: var(--surface-raised); border-radius: 12px; padding: 20px; width: 100%; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-                <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; margin-bottom: 6px;">Confirmar ação?</div>
-                <p style="font-size: 12px; font-weight: 300; color: var(--text-secondary); line-height: 1.4; margin-bottom: 16px;">Esta ação não pode ser desfeita.</p>
+            <div style="background: rgba(0,0,0,0.4); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 180px;">
+              <div style="background: var(--surface-raised); border-radius: 12px; padding: 20px; width: 100%; max-width: 280px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); color: var(--text-primary);">
+                <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--text-primary);">Confirmar ação?</div>
+                <div style="font-size: 12px; font-weight: 300; color: var(--text-secondary); line-height: 1.4; margin-bottom: 16px;">Esta ação não pode ser desfeita.</div>
                 <div style="display: flex; gap: 8px; justify-content: flex-end;">
                   <button type="button" class="btn btn-ghost btn-sm">Cancelar</button>
                   <button type="button" class="btn btn-primary btn-sm">Confirmar</button>
@@ -1398,19 +1384,38 @@
       </div>
     </section>
 
-    <!-- ═══ MODAL ═══ -->
+    <!-- ═══ DIALOG / MODAL ═══ -->
     <section id="modal">
       <div class="section-header">
         <div class="overline">Components</div>
-        <h2>Modal</h2>
+        <h2>Dialog</h2>
+        <p>Diálogos modais para confirmações, formulários e informações contextuais.</p>
       </div>
-      <div class="modal-overlay">
-        <div class="modal">
-          <h3>Confirmar ação</h3>
-          <p>Tem certeza que deseja desativar este parceiro? Esta ação pode ser revertida a qualquer momento.</p>
-          <div class="modal-actions">
-            <button type="button" class="btn btn-ghost btn-md">Cancelar</button>
-            <button type="button" class="btn btn-destructive btn-md">Desativar</button>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px;">
+        <div>
+          <div class="comp-label">Destructive Confirmation</div>
+          <div class="modal-overlay">
+            <div class="modal">
+              <h3>Confirmar ação</h3>
+              <p>Tem certeza que deseja desativar este parceiro? Esta ação pode ser revertida a qualquer momento.</p>
+              <div class="modal-actions">
+                <button type="button" class="btn btn-ghost btn-md">Cancelar</button>
+                <button type="button" class="btn btn-destructive btn-md">Desativar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="comp-label">Default Confirmation</div>
+          <div class="modal-overlay">
+            <div class="modal">
+              <h3>Salvar alterações</h3>
+              <p>Deseja salvar as alterações feitas no cadastro do parceiro antes de sair?</p>
+              <div class="modal-actions">
+                <button type="button" class="btn btn-ghost btn-md">Descartar</button>
+                <button type="button" class="btn btn-primary btn-md">Salvar</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1607,9 +1612,8 @@
     const toggle = document.getElementById('theme-toggle');
     const icon = toggle.querySelector('.material-symbols-rounded');
     const stored = localStorage.getItem('ume-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (stored === 'dark' || (!stored && prefersDark)) {
+    if (stored === 'dark') {
       document.documentElement.classList.add('dark');
       icon.textContent = 'light_mode';
     }
@@ -1618,13 +1622,6 @@
       const isDark = document.documentElement.classList.toggle('dark');
       icon.textContent = isDark ? 'light_mode' : 'dark_mode';
       localStorage.setItem('ume-theme', isDark ? 'dark' : 'light');
-    });
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-      if (!localStorage.getItem('ume-theme')) {
-        document.documentElement.classList.toggle('dark', e.matches);
-        icon.textContent = e.matches ? 'light_mode' : 'dark_mode';
-      }
     });
     // ─── Scroll Spy ───
     const tocLinks = document.querySelectorAll('.ds-toc a');
