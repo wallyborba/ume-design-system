@@ -121,9 +121,14 @@
       --state-hover: rgba(0, 0, 0, 0.04);
       --state-selected: rgba(9, 207, 124, 0.08);
       --state-disabled-opacity: 0.4;
+      --feedback-success-bg: rgba(9, 207, 124, 0.12);
       --feedback-success-text: #038C52;
-      --feedback-error-text: #C53030;
+      --feedback-error-bg: rgba(229, 62, 62, 0.1);
+      --feedback-error-text: #E53E3E;
+      --feedback-warning-bg: rgba(234, 179, 8, 0.12);
       --feedback-warning-text: #A16207;
+      --feedback-info-bg: rgba(37, 99, 235, 0.1);
+      --feedback-info-text: #1D4ED8;
     }
 
     .dark {
@@ -143,9 +148,14 @@
       --state-hover: rgba(255, 255, 255, 0.06);
       --state-selected: rgba(9, 207, 124, 0.12);
       --state-disabled-opacity: 0.3;
+      --feedback-success-bg: rgba(9, 207, 124, 0.12);
       --feedback-success-text: #4DDF9F;
+      --feedback-error-bg: rgba(229, 62, 62, 0.12);
       --feedback-error-text: #FC8181;
+      --feedback-warning-bg: rgba(234, 179, 8, 0.12);
       --feedback-warning-text: #FACC15;
+      --feedback-info-bg: rgba(59, 130, 246, 0.12);
+      --feedback-info-text: #60A5FA;
     }
 
     .dark .section-header h2 {
@@ -1774,7 +1784,7 @@
     }
 
     .a11y-dont {
-      border-left: 3px solid #E53E3E;
+      border-left: 3px solid var(--feedback-error-text);
     }
 
     @media (max-width: 768px) {
@@ -2165,7 +2175,7 @@
           </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #FFFFFF; border-bottom: 1px solid #E5E5E5;"><span
+          <div class="swatch" style="background: var(--surface-page); border-bottom: 1px solid var(--border-default);"><span
               style="color:#555; background:rgba(0,0,0,0.06)">Base</span></div>
           <div class="info">
             <div class="name">Branco</div>
@@ -3211,22 +3221,22 @@
           <div class="level-usage">Fundo da página, linhas de tabela, painéis recessos</div>
         </div>
         <div class="elevation-card"
-          style="background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border-default);">
+          style="background: var(--surface-page); box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border-default);">
           <div class="level">1</div>
           <div class="level-name">Resting</div>
           <div class="level-usage">Cards, itens de lista, sidebar, barra inferior</div>
         </div>
-        <div class="elevation-card" style="background: #FFFFFF; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div class="elevation-card" style="background: var(--surface-page); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
           <div class="level">2</div>
           <div class="level-name">Raised</div>
           <div class="level-usage">Cards hover, dropdowns, FABs, popovers</div>
         </div>
-        <div class="elevation-card" style="background: #FFFFFF; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+        <div class="elevation-card" style="background: var(--surface-page); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
           <div class="level">3</div>
           <div class="level-name">Floating</div>
           <div class="level-usage">Modais, dialogs, toasts, tooltips</div>
         </div>
-        <div class="elevation-card" style="background: #FFFFFF; box-shadow: 0 16px 48px rgba(0,0,0,0.16);">
+        <div class="elevation-card" style="background: var(--surface-page); box-shadow: 0 16px 48px rgba(0,0,0,0.16);">
           <div class="level">4</div>
           <div class="level-name">Topmost</div>
           <div class="level-usage">Overlays full-screen, alertas críticos</div>
@@ -3440,7 +3450,7 @@
           <h5>Linear</h5>
           <div class="easing-value">linear</div>
           <div class="easing-desc">Velocidade constante — apenas para animações contínuas (progress bars, spinners,
-            shimmer).</div>
+            animação de carregamento).</div>
           <div class="easing-track">
             <div class="easing-dot"></div>
           </div>
@@ -3495,7 +3505,7 @@
         <div class="duration-row">
           <div class="duration-name">slower</div>
           <div class="duration-value">500ms</div>
-          <div class="duration-desc">Deliberado — stagger, layout shift</div>
+          <div class="duration-desc">Deliberado — entrada sequencial, mudança de layout</div>
           <div class="duration-bar-track">
             <div class="duration-bar-fill" style="width: 71%;"></div>
           </div>
@@ -3559,8 +3569,7 @@
           </div>
           <div class="a11y-rule a11y-dont">
             <h5>Remover</h5>
-            <p>Transform-based (translate, scale, rotate). Animações infinitas/looping (shimmer, gradient-flow). Stagger
-              delays. Scroll-behavior: smooth.</p>
+            <p>Baseado em transform (translate, scale, rotate). Animações infinitas/looping (animação de carregamento, gradient-flow). Delays de entrada sequencial. Scroll-behavior: smooth.</p>
           </div>
           <div class="a11y-rule a11y-do">
             <h5>CSS automático</h5>
