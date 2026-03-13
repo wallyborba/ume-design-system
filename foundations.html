@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +12,83 @@
   <meta property="og:description" content="Design System da Ume — Foundations, Components & Patterns">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#09CF7C">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
   <style>
     /* ─── Aeonik Font Family ─── */
-    @font-face { font-family: 'Aeonik'; src: url('fonts/aeonik-light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik'; src: url('fonts/aeonik-regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik'; src: url('fonts/aeonik-medium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik'; src: url('fonts/aeonik-bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('fonts/aeonik-light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('fonts/aeonik-regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('fonts/aeonik-medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('fonts/aeonik-bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
 
     /* ─── Aeonik Fono Font Family ─── */
-    @font-face { font-family: 'Aeonik Fono'; src: url('fonts/aeonikfono-light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik Fono'; src: url('fonts/aeonikfono-regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik Fono'; src: url('fonts/aeonikfono-medium.otf') format('opentype'); font-weight: 500; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Aeonik Fono'; src: url('fonts/aeonikfono-bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face {
+      font-family: 'Aeonik Fono';
+      src: url('fonts/aeonikfono-light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik Fono';
+      src: url('fonts/aeonikfono-regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik Fono';
+      src: url('fonts/aeonikfono-medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Aeonik Fono';
+      src: url('fonts/aeonikfono-bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
 
     /* ─── Reset ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --ume-cinza-escuro: #1A1A1A;
@@ -56,8 +118,8 @@
       --text-high-contrast: #000000;
       --border-default: #E5E5E5;
       --border-strong: #CCCCCC;
-      --state-hover: rgba(0,0,0,0.04);
-      --state-selected: rgba(9,207,124,0.08);
+      --state-hover: rgba(0, 0, 0, 0.04);
+      --state-selected: rgba(9, 207, 124, 0.08);
       --state-disabled-opacity: 0.4;
       --feedback-success-text: #038C52;
       --feedback-error-text: #C53030;
@@ -78,390 +140,1926 @@
       --text-high-contrast: #FFFFFF;
       --border-default: #2D2D2D;
       --border-strong: #404040;
-      --state-hover: rgba(255,255,255,0.06);
-      --state-selected: rgba(9,207,124,0.12);
+      --state-hover: rgba(255, 255, 255, 0.06);
+      --state-selected: rgba(9, 207, 124, 0.12);
       --state-disabled-opacity: 0.3;
       --feedback-success-text: #4DDF9F;
       --feedback-error-text: #FC8181;
       --feedback-warning-text: #FACC15;
     }
 
-    .dark .section-header h2 { color: var(--text-primary); }
-    .dark .icon-item .material-symbols-rounded { color: var(--text-primary); }
+    .dark .section-header h2 {
+      color: var(--text-primary);
+    }
 
-    body { font-family: var(--font-body); background: var(--surface-subtle); color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+    .dark .icon-item .material-symbols-rounded {
+      color: var(--text-primary);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--surface-subtle);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
 
     /* ─── Nav Bar ─── */
-    .ds-nav { position: sticky; top: 0; z-index: 200; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--border-default); }
-    .dark .ds-nav { background: rgba(15,15,15,0.85); }
-    .ds-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
-    .ds-nav-logo { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ume-verde-claro); text-decoration: none; }
-    .ds-nav-links { display: flex; gap: 24px; align-items: center; }
-    .ds-nav-links a { font-size: 14px; font-weight: 400; color: var(--text-secondary); text-decoration: none; transition: color 200ms; }
-    .ds-nav-links a:hover { color: var(--text-primary); }
-    .ds-nav-links a[aria-current="page"] { color: var(--ume-verde-claro); font-weight: 500; }
-    #theme-toggle { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border-default); background: var(--surface-raised); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s ease; }
-    @media (max-width: 768px) { .ds-nav-links a { font-size: 13px; } .ds-nav-links { gap: 16px; } }
+    .ds-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid var(--border-default);
+    }
 
-    .page { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-    section { margin-bottom: 80px; }
+    .dark .ds-nav {
+      background: rgba(15, 15, 15, 0.85);
+    }
 
-    .section-header { margin-bottom: 40px; }
-    .section-header .overline { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-overline); margin-bottom: 8px; }
-    .section-header h2 { font-family: var(--font-display); font-size: 36px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
-    .section-header p { font-size: 16px; font-weight: 300; color: var(--text-secondary); margin-top: 8px; max-width: 800px; line-height: 1.5; }
+    .ds-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    /* ═══ COVER ═══ */
-    .cover { min-height: 400px; background: var(--ume-gradient-dark); border-radius: 24px; padding: 64px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; margin-bottom: 80px; }
-    .cover::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(9,207,124,0.15) 0%, transparent 70%); pointer-events: none; }
-    .cover::after { content: ''; position: absolute; bottom: -50px; left: 30%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(151,74,253,0.1) 0%, transparent 70%); pointer-events: none; }
-    .cover .overline { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ume-verde-claro); margin-bottom: 12px; position: relative; z-index: 1; }
-    .cover h1 { font-family: var(--font-display); font-size: 56px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; color: #FFF; position: relative; z-index: 1; }
-    .cover .subtitle { font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.7); margin-top: 16px; max-width: 640px; line-height: 1.5; position: relative; z-index: 1; }
-    .cover .version-tag { position: absolute; top: 32px; right: 32px; font-size: 12px; font-weight: 500; color: var(--ume-verde-claro); background: rgba(9,207,124,0.1); border: 1px solid rgba(9,207,124,0.2); padding: 6px 14px; border-radius: 100px; z-index: 1; }
+    .ds-nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ume-verde-claro);
+      text-decoration: none;
+    }
 
-    /* ═══ BRAND DNA ═══ */
-    .brand-dna-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .dna-card { background: var(--surface-raised); border-radius: 16px; padding: 32px; border: 1px solid var(--border-default); position: relative; overflow: hidden; }
-    .dna-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo)); }
-    .dna-card .icon-wrap { width: 48px; height: 48px; border-radius: 12px; background: var(--ume-verde-escuro); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .dna-card .icon-wrap .material-symbols-rounded { font-size: 24px; color: var(--ume-verde-claro); }
-    .dna-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px; color: var(--text-primary); }
-    .dna-card p { font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.5; }
+    .ds-nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
 
-    /* ═══ COLORS ═══ */
-    .color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .color-card { border-radius: 16px; overflow: hidden; border: 1px solid var(--border-default); background: var(--surface-raised); }
-    .color-card .swatch { height: 100px; display: flex; align-items: flex-end; padding: 12px 16px; }
-    .color-card .swatch span { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
-    .color-card .info { padding: 16px; }
-    .color-card .info .name { font-family: var(--font-display); font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .color-card .info .hex { font-size: 13px; font-weight: 400; color: var(--text-muted); font-family: 'SF Mono', 'Fira Code', monospace; }
-    .color-card .info .usage { font-size: 12px; font-weight: 300; color: var(--text-secondary); margin-top: 6px; line-height: 1.4; }
+    .ds-nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 200ms;
+    }
 
-    .scale-section { margin-top: 40px; }
-    .scale-label { font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 12px; }
-    .scale-strip { display: flex; border-radius: 12px; overflow: hidden; height: 56px; }
-    .scale-strip .step { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; font-family: 'SF Mono', 'Fira Code', monospace; transition: flex 0.2s; }
-    .scale-strip .step:hover { flex: 2; }
+    .ds-nav-links a:hover {
+      color: var(--text-primary);
+    }
 
-    /* ═══ GRADIENTS ═══ */
-    .gradient-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .gradient-card { border-radius: 20px; padding: 40px; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
-    .gradient-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 500; margin-bottom: 8px; }
-    .gradient-card p { font-size: 14px; font-weight: 300; line-height: 1.5; max-width: 300px; }
-    .gradient-card code { display: block; font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; margin-top: 12px; padding: 8px 12px; border-radius: 8px; word-break: break-all; line-height: 1.4; }
-    .gradient-dark { background: var(--ume-gradient-dark); color: #FFF; }
-    .gradient-dark code { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
-    .gradient-light { background: var(--ume-gradient-light); color: var(--ume-cinza-escuro); }
-    .gradient-light code { background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.6); }
+    .ds-nav-links a[aria-current="page"] {
+      color: var(--ume-verde-claro);
+      font-weight: 500;
+    }
 
-    /* ═══ GLASS ═══ */
-    .glass-showcase { background: var(--ume-gradient-dark); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; overflow: hidden; }
-    .glass-showcase::before { content: ''; position: absolute; top: 20%; left: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(9,207,124,0.2) 0%, transparent 70%); pointer-events: none; }
-    .glass-showcase::after { content: ''; position: absolute; bottom: 10%; right: 15%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(151,74,253,0.15) 0%, transparent 70%); pointer-events: none; }
-    .glass-card { border-radius: 16px; padding: 28px; position: relative; z-index: 1; }
-    .glass-card h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; color: #FFF; margin-bottom: 8px; }
-    .glass-card p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 16px; }
-    .glass-card code { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: rgba(255,255,255,0.5); display: block; line-height: 1.5; }
-    .glass-level-1 { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-    .glass-level-2 { background: rgba(255,255,255,0.14); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.18); }
-    .glass-level-3 { background: rgba(255,255,255,0.22); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 0 30px rgba(9,207,124,0.1); }
-
-    /* ═══ GRADIENT BORDERS ═══ */
-    .gradient-border-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .gb-card { background: var(--surface-raised); border-radius: 16px; padding: 28px; position: relative; }
-    .gb-card::before { content: ''; position: absolute; inset: 0; border-radius: 16px; padding: 1px; background: linear-gradient(135deg, #09CF7C 0%, #6FB8C8 50%, #974AFD 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-    .gb-card h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 8px; }
-    .gb-card p { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.5; }
-    .gb-card code { display: block; margin-top: 12px; font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); }
-    .gb-card-top { background: var(--surface-raised); border-radius: 16px; padding: 28px; border: 1px solid var(--border-default); position: relative; overflow: hidden; }
-    .gb-card-top::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #09CF7C, #974AFD); }
-    .gb-card-top h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 8px; }
-    .gb-card-top p { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.5; }
-    .gb-card-left { background: var(--surface-raised); border-radius: 16px; padding: 28px; border: 1px solid var(--border-default); position: relative; overflow: hidden; }
-    .gb-card-left::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #09CF7C, #974AFD); }
-
-    /* ═══ TYPOGRAPHY ═══ */
-    .type-showcase { background: var(--surface-raised); border-radius: 20px; padding: 48px; border: 1px solid var(--border-default); }
-    .type-row { display: flex; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--border-default); }
-    .type-row:last-child { border-bottom: none; }
-    .type-label { width: 120px; flex-shrink: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); }
-    .type-sample { flex: 1; font-family: var(--font-display); }
-    .type-meta { width: 220px; flex-shrink: 0; text-align: right; font-size: 12px; color: var(--text-muted); font-family: 'SF Mono', 'Fira Code', monospace; }
-
-    /* ─── Typography Grid Alignment ─── */
-    .type-grid-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 6px; border-radius: 4px; background: rgba(9,207,124,0.1); color: var(--ume-verde-medio); font-family: 'SF Mono', 'Fira Code', monospace; margin-left: 8px; }
-    .type-perf-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 6px; border-radius: 4px; background: rgba(151,74,253,0.08); color: var(--ume-roxo); font-family: 'SF Mono', 'Fira Code', monospace; }
-
-    /* ─── Typography Readability Demo ─── */
-    .readability-demo { background: var(--surface-raised); border-radius: 16px; padding: 32px; border: 1px solid var(--border-default); margin-bottom: 24px; }
-    .readability-demo h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 16px; }
-    .readability-row { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; padding: 12px 0; border-bottom: 1px solid var(--border-default); }
-    .readability-row:last-child { border-bottom: none; }
-    .readability-label { font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; padding-top: 4px; }
-    .readability-value { font-size: 14px; color: var(--text-secondary); }
-
-    /* ─── Typography Icon Alignment Demo ─── */
-    .icon-text-demo { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--surface-raised); border-radius: 8px; border: 1px solid var(--border-default); }
-    .icon-text-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
-
-    /* ─── Font Performance ─── */
-    .perf-card { background: var(--surface-raised); border-radius: 16px; padding: 24px; border: 1px solid var(--border-default); }
-    .perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
-    .perf-item { padding: 16px; border-radius: 12px; border: 1px solid var(--border-default); }
-    .perf-item h5 { font-family: var(--font-display); font-size: 14px; font-weight: 500; margin-bottom: 8px; }
-    .perf-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-    .perf-item code { font-size: 12px; background: var(--surface-muted); padding: 2px 6px; border-radius: 4px; }
-
-    /* ═══ UNIT / SPACING ═══ */
-    .spacing-grid { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
-    .spacing-block { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 56px; }
-    .spacing-block .bar { background: var(--ume-verde-claro); border-radius: 4px; width: 40px; opacity: 0.8; }
-    .spacing-block .label { font-size: 11px; font-weight: 500; color: var(--text-muted); }
-    .spacing-block .value { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-secondary); }
-    .spacing-block .unit-val { font-size: 10px; color: var(--text-muted); }
-    .unit-badge { display: inline-flex; align-items: center; gap: 4px; background: var(--surface-muted); border-radius: 6px; padding: 4px 10px; font-size: 13px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-secondary); }
-    .usage-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
-    .usage-table th { text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-subtle); border-bottom: 1px solid var(--border-default); }
-    .usage-table td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border-default); color: var(--text-primary); }
-    .usage-table code { font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-secondary); background: var(--surface-muted); padding: 2px 6px; border-radius: 4px; }
-
-    /* ═══ GRID ═══ */
-    .grid-demo { border: 1px solid var(--border-default); border-radius: 16px; overflow: hidden; background: var(--surface-raised); margin-bottom: 20px; }
-    .grid-demo-header { padding: 12px 16px; font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-default); display: flex; justify-content: space-between; }
-    .grid-demo-body { padding: 16px; }
-    .grid-cols { display: grid; gap: 0; }
-    .grid-col { background: rgba(9,207,124,0.08); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--ume-verde-medio); }
-    .grid-gutter-label { font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 8px; }
-    .grid-margin-indicator { font-size: 10px; color: var(--ume-roxo); font-weight: 500; }
-
-    /* ═══ BREAKPOINTS ═══ */
-    .bp-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-default); }
-    .bp-row:last-child { border-bottom: none; }
-    .bp-name { width: 60px; font-size: 14px; font-weight: 500; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--ume-verde-claro); }
-    .bp-value { width: 80px; font-size: 13px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-secondary); }
-    .bp-bar-wrap { flex: 1; }
-    .bp-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo)); opacity: 0.6; }
-    .bp-desc { width: 260px; font-size: 13px; color: var(--text-secondary); font-weight: 300; }
-
-    .radius-grid { display: flex; gap: 24px; flex-wrap: wrap; }
-    .radius-block { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .radius-block .shape { width: 80px; height: 80px; border: 2px solid var(--ume-verde-claro); background: rgba(9,207,124,0.06); }
-    .radius-block .label { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
-    .radius-block .value { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); }
-
-    /* ═══ SHADOWS ═══ */
-    .shadow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .shadow-card { background: var(--surface-raised); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .shadow-card .label { font-family: var(--font-display); font-size: 14px; font-weight: 500; }
-    .shadow-card .value { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); text-align: center; }
-
-    /* ═══ GLOW ═══ */
-    .glow-showcase { background: var(--ume-cinza-escuro); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .glow-card { background: #262626; border-radius: 16px; padding: 32px; text-align: center; }
-    .glow-card h4 { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: #FFF; margin-bottom: 8px; }
-    .glow-card p { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
-    .glow-card code { font-size: 10px; font-family: 'SF Mono', 'Fira Code', monospace; color: rgba(255,255,255,0.3); }
-    .glow-green { box-shadow: 0 0 20px rgba(9,207,124,0.15), 0 0 60px rgba(9,207,124,0.05); }
-    .glow-green-strong { box-shadow: 0 0 30px rgba(9,207,124,0.25), 0 0 80px rgba(9,207,124,0.1); }
-    .glow-purple { box-shadow: 0 0 20px rgba(151,74,253,0.15), 0 0 60px rgba(151,74,253,0.05); }
-
-    /* ─── Elevation System ─── */
-    .elevation-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 40px; }
-    .elevation-card { border-radius: 16px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px; min-height: 140px; justify-content: center; transition: all 0.3s ease; }
-    .elevation-card .level { font-family: var(--font-display); font-size: 24px; font-weight: 500; }
-    .elevation-card .level-name { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
-    .elevation-card .level-usage { font-size: 11px; color: var(--text-muted); text-align: center; line-height: 1.4; margin-top: 4px; }
-
-    /* ─── Dark Mode Surface Demo ─── */
-    .surface-demo { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 40px; }
-    .surface-chip { border-radius: 12px; padding: 16px; text-align: center; border: 1px solid var(--border-default); }
-    .surface-chip .chip-level { font-family: var(--font-display); font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .surface-chip .chip-color { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); }
-
-    /* ─── Z-Index ─── */
-    .zindex-table { width: 100%; border-collapse: collapse; background: var(--surface-raised); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-default); }
-    .zindex-table th { text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); background: var(--surface-muted); border-bottom: 1px solid var(--border-default); }
-    .zindex-table td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border-default); }
-    .zindex-table tr:last-child td { border-bottom: none; }
-    .zindex-table code { font-size: 12px; background: var(--surface-muted); padding: 2px 6px; border-radius: 4px; }
-    .zindex-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo)); opacity: 0.7; }
-
-    /* ═══ MOTION ═══ */
-    .motion-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .motion-card { background: var(--surface-raised); border-radius: 16px; padding: 32px; border: 1px solid var(--border-default); text-align: center; }
-    .motion-card h4 { font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 8px; }
-    .motion-card p { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.5; margin-bottom: 20px; }
-    .motion-demo { height: 60px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .motion-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--ume-verde-claro); }
-    @keyframes stagger-demo { 0% { transform: translateY(12px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-    .stagger-demo .motion-dot { animation: stagger-demo 0.5s ease-out both; }
-    .stagger-demo .motion-dot:nth-child(1) { animation-delay: 0ms; }
-    .stagger-demo .motion-dot:nth-child(2) { animation-delay: 80ms; }
-    .stagger-demo .motion-dot:nth-child(3) { animation-delay: 160ms; }
-    .stagger-demo .motion-dot:nth-child(4) { animation-delay: 240ms; }
-    .stagger-demo .motion-dot:nth-child(5) { animation-delay: 320ms; }
-    @keyframes grow-demo { 0% { transform: scale(0.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-    .grow-demo .motion-dot { width: 40px; height: 40px; border-radius: 12px; animation: grow-demo 0.6s ease-out both infinite; animation-direction: alternate; }
-    @keyframes shimmer-demo { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-    .shimmer-demo-bar { width: 100%; height: 12px; border-radius: 6px; background: linear-gradient(90deg, #E5E5E5 0%, rgba(9,207,124,0.15) 50%, #E5E5E5 100%); background-size: 200% 100%; animation: shimmer-demo 2s ease-in-out infinite; }
-
-    /* ─── Easing Curves ─── */
-    .easing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
-    .easing-card { background: var(--surface-raised); border-radius: 12px; padding: 20px; border: 1px solid var(--border-default); }
-    .easing-card h5 { font-family: var(--font-display); font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .easing-card .easing-value { font-size: 11px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); margin-bottom: 12px; }
-    .easing-card .easing-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px; }
-    .easing-track { height: 4px; background: var(--surface-muted); border-radius: 2px; position: relative; overflow: visible; }
-    .easing-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--ume-verde-claro); position: absolute; top: -4px; left: 0; }
-    .easing-card:hover .easing-dot { left: calc(100% - 12px); }
-    .easing-card:nth-child(1):hover .easing-dot { transition: left 400ms cubic-bezier(0.2, 0, 0, 1); }
-    .easing-card:nth-child(2):hover .easing-dot { transition: left 400ms cubic-bezier(0.3, 0, 0.8, 0.15); }
-    .easing-card:nth-child(3):hover .easing-dot { transition: left 400ms cubic-bezier(0.05, 0.7, 0.1, 1); }
-    .easing-card:nth-child(4):hover .easing-dot { transition: left 600ms cubic-bezier(0.2, 0, 0, 1.4); }
-    .easing-card:nth-child(5):hover .easing-dot { transition: left 400ms linear; }
-
-    /* ─── Duration Scale ─── */
-    .duration-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 40px; }
-    .duration-row { display: grid; grid-template-columns: 100px 80px 1fr 200px; gap: 12px; align-items: center; padding: 10px 16px; background: var(--surface-raised); border-radius: 8px; border: 1px solid var(--border-default); }
-    .duration-name { font-size: 13px; font-weight: 500; }
-    .duration-value { font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-muted); }
-    .duration-desc { font-size: 12px; color: var(--text-secondary); }
-    .duration-bar-track { height: 6px; background: var(--surface-muted); border-radius: 3px; overflow: hidden; }
-    .duration-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo)); }
-
-    /* ─── Accessibility Motion ─── */
-    .a11y-motion-card { background: var(--surface-raised); border-radius: 16px; padding: 24px; border: 1px solid var(--border-default); margin-bottom: 24px; }
-    .a11y-motion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .a11y-rule { padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-default); }
-    .a11y-rule h5 { font-family: var(--font-display); font-size: 13px; font-weight: 500; margin-bottom: 4px; }
-    .a11y-rule p { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
-    .a11y-do { border-left: 3px solid var(--ume-verde-claro); }
-    .a11y-dont { border-left: 3px solid #E53E3E; }
+    #theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border-default);
+      background: var(--surface-raised);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
 
     @media (max-width: 768px) {
-      .easing-grid { grid-template-columns: 1fr; }
-      .duration-row { grid-template-columns: 80px 60px 1fr; }
-      .duration-row .duration-bar-track { display: none; }
-      .a11y-motion-grid { grid-template-columns: 1fr; }
+      .ds-nav-links a {
+        font-size: 13px;
+      }
+
+      .ds-nav-links {
+        gap: 16px;
+      }
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-default);
+      margin: 64px 0;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header .overline {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-overline);
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
+    /* ═══ COVER ═══ */
+    .cover {
+      min-height: 400px;
+      background: var(--ume-gradient-dark);
+      border-radius: 24px;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(9, 207, 124, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 30%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(151, 74, 253, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover .overline {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ume-verde-claro);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover h1 {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #FFF;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 16px;
+      max-width: 640px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover .version-tag {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ume-verde-claro);
+      background: rgba(9, 207, 124, 0.1);
+      border: 1px solid rgba(9, 207, 124, 0.2);
+      padding: 6px 14px;
+      border-radius: 100px;
+      z-index: 1;
+    }
+
+    /* ═══ COLORS ═══ */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .color-card {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-default);
+      background: var(--surface-raised);
+    }
+
+    .color-card .swatch {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px 16px;
+    }
+
+    .color-card .swatch span {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .color-card .info {
+      padding: 16px;
+    }
+
+    .color-card .info .name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .color-card .info .hex {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      display: inline;
+    }
+
+    .color-card .info .hex-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .color-card .info .usage {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      padding: 2px 6px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .copy-btn:hover {
+      background: var(--state-hover);
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+
+    .copy-btn.copied {
+      color: var(--feedback-success-text);
+      border-color: var(--feedback-success-text);
+    }
+
+    .scale-section {
+      margin-top: 40px;
+    }
+
+    .scale-label {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .scale-strip {
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 56px;
+    }
+
+    .scale-strip .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      transition: flex 0.2s;
+      cursor: pointer;
+      gap: 2px;
+      position: relative;
+    }
+
+    .scale-strip .step:hover {
+      flex: 2.5;
+    }
+
+    .scale-strip .step .step-hex {
+      font-size: 9px;
+      font-weight: 400;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .scale-strip .step:hover .step-hex {
+      opacity: 0.8;
+    }
+
+    /* ═══ GRADIENTS ═══ */
+    .gradient-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .gradient-card {
+      border-radius: 20px;
+      padding: 40px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gradient-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .gradient-card p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.5;
+      max-width: 300px;
+    }
+
+    .gradient-card code {
+      display: block;
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      padding: 8px 12px;
+      border-radius: 8px;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+
+    .props-accordion {
+      margin-top: 12px;
+    }
+
+    .props-accordion summary {
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+
+    .props-accordion summary:hover {
+      opacity: 1;
+    }
+
+    .props-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .props-accordion summary .material-symbols-rounded {
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .props-accordion[open] summary .material-symbols-rounded {
+      transform: rotate(180deg);
+    }
+
+    .props-accordion .props-content {
+      margin-top: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .props-accordion .props-content code {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .props-accordion .props-copy {
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 3px 6px;
+      cursor: pointer;
+      color: inherit;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      opacity: 0.6;
+      margin-top: 6px;
+    }
+
+    .props-accordion .props-copy:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .props-accordion .props-copy.copied {
+      opacity: 1;
+      color: var(--ume-verde-claro);
+    }
+
+    .gradient-light .props-copy {
+      background: rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .gradient-light .props-copy:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .sub-header {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .sub-header .sub-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-secondary);
+    }
+
+    .section-accordion {
+      border: 1px solid var(--border-default);
+      border-radius: 16px;
+      padding: 24px 32px;
+      background: var(--surface-raised);
+    }
+
+    .section-accordion summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .section-accordion summary .material-symbols-rounded {
+      transition: transform 0.2s;
+      color: var(--text-muted);
+    }
+
+    .section-accordion[open] summary .material-symbols-rounded {
+      transform: rotate(180deg);
+    }
+
+    .gradient-dark {
+      background: var(--ume-gradient-dark);
+      color: #FFF;
+    }
+
+    .gradient-dark code {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .gradient-light {
+      background: var(--ume-gradient-light);
+      color: var(--ume-cinza-escuro);
+    }
+
+    .gradient-light code {
+      background: rgba(0, 0, 0, 0.06);
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* ═══ GLASS ═══ */
+    .glass-showcase {
+      background: var(--ume-gradient-dark);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-showcase::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(9, 207, 124, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .glass-showcase::after {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      right: 15%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(151, 74, 253, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .glass-card {
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: #FFF;
+      margin-bottom: 8px;
+    }
+
+    .glass-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .glass-card code {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+      line-height: 1.5;
+    }
+
+    .glass-card .props-accordion summary {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-card .props-copy {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-card .props-copy:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFF;
+    }
+
+    .glass-level-1 {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-level-2 {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .glass-level-3 {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 30px rgba(9, 207, 124, 0.1);
+    }
+
+    /* ═══ GRADIENT BORDERS ═══ */
+    .gradient-border-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .gb-card {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .gb-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, #09CF7C 0%, #6FB8C8 50%, #974AFD 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .gb-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .gb-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .gb-card code {
+      display: block;
+      margin-top: 12px;
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+    }
+
+    .gb-card-top {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border-default);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gb-card-top::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #09CF7C, #974AFD);
+    }
+
+    .gb-card-top h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .gb-card-top p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .gb-card-left {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border-default);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gb-card-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #09CF7C, #974AFD);
+    }
+
+    /* ═══ TYPOGRAPHY ═══ */
+    .type-showcase {
+      background: var(--surface-raised);
+      border-radius: 20px;
+      padding: 48px;
+      border: 1px solid var(--border-default);
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .type-row:last-child {
+      border-bottom: none;
+    }
+
+    .type-label {
+      width: 120px;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .type-sample {
+      flex: 1;
+      font-family: var(--font-display);
+    }
+
+    .type-meta {
+      width: 220px;
+      flex-shrink: 0;
+      text-align: right;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* ─── Typography Grid Alignment ─── */
+    .type-grid-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(9, 207, 124, 0.1);
+      color: var(--ume-verde-medio);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      margin-left: 8px;
+    }
+
+    .type-perf-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(151, 74, 253, 0.08);
+      color: var(--ume-roxo);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* ─── Typography Readability Demo ─── */
+    .readability-demo {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--border-default);
+      margin-bottom: 24px;
+    }
+
+    .readability-demo h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .readability-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .readability-row:last-child {
+      border-bottom: none;
+    }
+
+    .readability-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 4px;
+    }
+
+    .readability-value {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* ─── Typography Icon Alignment Demo ─── */
+    .icon-text-demo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--surface-raised);
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+    }
+
+    .icon-text-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── Font Performance ─── */
+    .perf-card {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-default);
+    }
+
+    .perf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .perf-item {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-default);
+    }
+
+    .perf-item h5 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .perf-item p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .perf-item code {
+      font-size: 12px;
+      background: var(--surface-muted);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ═══ UNIT / SPACING ═══ */
+    .spacing-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .spacing-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 56px;
+    }
+
+    .spacing-block .bar {
+      background: var(--ume-verde-claro);
+      border-radius: 4px;
+      width: 40px;
+      opacity: 0.8;
+    }
+
+    .spacing-block .label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .spacing-block .value {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-secondary);
+    }
+
+    .spacing-block .unit-val {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface-muted);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-secondary);
+    }
+
+    .usage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+    }
+
+    .usage-table th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--surface-subtle);
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .usage-table td {
+      padding: 12px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border-default);
+      color: var(--text-primary);
+    }
+
+    .usage-table code {
+      font-size: 12px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-secondary);
+      background: var(--surface-muted);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ═══ GRID ═══ */
+    .grid-demo {
+      border: 1px solid var(--border-default);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--surface-raised);
+      margin-bottom: 20px;
+    }
+
+    .grid-demo-header {
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .grid-demo-body {
+      padding: 16px;
+    }
+
+    .grid-cols {
+      display: grid;
+      gap: 0;
+    }
+
+    .grid-col {
+      background: rgba(9, 207, 124, 0.08);
+      border: 1px solid rgba(9, 207, 124, 0.2);
+      border-radius: 4px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ume-verde-medio);
+    }
+
+    .grid-gutter-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .grid-margin-indicator {
+      font-size: 10px;
+      color: var(--ume-roxo);
+      font-weight: 500;
+    }
+
+    /* ═══ BREAKPOINTS ═══ */
+    .bp-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .bp-row:last-child {
+      border-bottom: none;
+    }
+
+    .bp-name {
+      width: 60px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--ume-verde-claro);
+    }
+
+    .bp-value {
+      width: 80px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-secondary);
+    }
+
+    .bp-bar-wrap {
+      flex: 1;
+    }
+
+    .bp-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo));
+      opacity: 0.6;
+    }
+
+    .bp-desc {
+      width: 260px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .radius-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .radius-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .radius-block .shape {
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--ume-verde-claro);
+      background: rgba(9, 207, 124, 0.06);
+    }
+
+    .radius-block .label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .radius-block .value {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+    }
+
+    /* ═══ SHADOWS ═══ */
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .shadow-card {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .shadow-card .label {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .shadow-card .value {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ═══ GLOW ═══ */
+    .glow-showcase {
+      background: var(--ume-cinza-escuro);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .glow-card {
+      background: #262626;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .glow-card h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: #FFF;
+      margin-bottom: 8px;
+    }
+
+    .glow-card p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 16px;
+    }
+
+    .glow-card code {
+      font-size: 10px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .glow-green {
+      box-shadow: 0 0 20px rgba(9, 207, 124, 0.15), 0 0 60px rgba(9, 207, 124, 0.05);
+    }
+
+    .glow-green-strong {
+      box-shadow: 0 0 30px rgba(9, 207, 124, 0.25), 0 0 80px rgba(9, 207, 124, 0.1);
+    }
+
+    .glow-purple {
+      box-shadow: 0 0 20px rgba(151, 74, 253, 0.15), 0 0 60px rgba(151, 74, 253, 0.05);
+    }
+
+    /* ─── Elevation System ─── */
+    .elevation-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .elevation-card {
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-height: 140px;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .elevation-card .level {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .elevation-card .level-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .elevation-card .level-usage {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+
+    /* ─── Dark Mode Surface Demo ─── */
+    .surface-demo {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .surface-chip {
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid var(--border-default);
+    }
+
+    .surface-chip .chip-level {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .surface-chip .chip-color {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+    }
+
+    /* ─── Z-Index ─── */
+    .zindex-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface-raised);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-default);
+    }
+
+    .zindex-table th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      background: var(--surface-muted);
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .zindex-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .zindex-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .zindex-table code {
+      font-size: 12px;
+      background: var(--surface-muted);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .zindex-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo));
+      opacity: 0.7;
+    }
+
+    /* ═══ MOTION ═══ */
+    .motion-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .motion-card {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--border-default);
+      text-align: center;
+    }
+
+    .motion-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .motion-card p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .motion-demo {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .motion-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--ume-verde-claro);
+    }
+
+    @keyframes stagger-demo {
+      0% {
+        transform: translateY(12px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .stagger-demo .motion-dot {
+      animation: stagger-demo 0.5s ease-out both;
+    }
+
+    .stagger-demo .motion-dot:nth-child(1) {
+      animation-delay: 0ms;
+    }
+
+    .stagger-demo .motion-dot:nth-child(2) {
+      animation-delay: 80ms;
+    }
+
+    .stagger-demo .motion-dot:nth-child(3) {
+      animation-delay: 160ms;
+    }
+
+    .stagger-demo .motion-dot:nth-child(4) {
+      animation-delay: 240ms;
+    }
+
+    .stagger-demo .motion-dot:nth-child(5) {
+      animation-delay: 320ms;
+    }
+
+    @keyframes grow-demo {
+      0% {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .grow-demo .motion-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      animation: grow-demo 0.6s ease-out both infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes shimmer-demo {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .shimmer-demo-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #E5E5E5 0%, rgba(9, 207, 124, 0.15) 50%, #E5E5E5 100%);
+      background-size: 200% 100%;
+      animation: shimmer-demo 2s ease-in-out infinite;
+    }
+
+    /* ─── Easing Curves ─── */
+    .easing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .easing-card {
+      background: var(--surface-raised);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border-default);
+    }
+
+    .easing-card h5 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .easing-card .easing-value {
+      font-size: 11px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .easing-card .easing-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .easing-track {
+      height: 4px;
+      background: var(--surface-muted);
+      border-radius: 2px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .easing-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--ume-verde-claro);
+      position: absolute;
+      top: -4px;
+      left: 0;
+      box-shadow: 0 0 8px rgba(9, 207, 124, 0.3);
+    }
+
+    .easing-card:nth-child(1) .easing-dot {
+      transition: left 400ms cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .easing-card:nth-child(2) .easing-dot {
+      transition: left 400ms cubic-bezier(0.3, 0, 0.8, 0.15);
+    }
+
+    .easing-card:nth-child(3) .easing-dot {
+      transition: left 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+    }
+
+    .easing-card:nth-child(4) .easing-dot {
+      transition: left 600ms cubic-bezier(0.2, 0, 0, 1.4);
+    }
+
+    .easing-card:nth-child(5) .easing-dot {
+      transition: left 400ms linear;
+    }
+
+    .easing-card:hover .easing-dot {
+      left: calc(100% - 12px);
+    }
+
+    /* ─── Duration Scale ─── */
+    .duration-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    .duration-row {
+      display: grid;
+      grid-template-columns: 100px 80px 1fr 200px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 16px;
+      background: var(--surface-raised);
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+      transition: border-color 200ms;
+    }
+
+    .duration-row:hover {
+      border-color: var(--ume-verde-claro);
+    }
+
+    .duration-name {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .duration-value {
+      font-size: 12px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-muted);
+    }
+
+    .duration-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .duration-bar-track {
+      height: 6px;
+      background: var(--surface-muted);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .duration-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--ume-verde-claro), var(--ume-roxo));
+      transition: width 600ms cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .duration-row:hover .duration-bar-fill {
+      filter: brightness(1.15);
+    }
+
+    /* ─── Accessibility Motion ─── */
+    .a11y-motion-card {
+      background: var(--surface-raised);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-default);
+      margin-bottom: 24px;
+    }
+
+    .a11y-motion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .a11y-rule {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+    }
+
+    .a11y-rule h5 {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .a11y-rule p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .a11y-do {
+      border-left: 3px solid var(--ume-verde-claro);
+    }
+
+    .a11y-dont {
+      border-left: 3px solid #E53E3E;
+    }
+
+    @media (max-width: 768px) {
+      .easing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .duration-row {
+        grid-template-columns: 80px 60px 1fr;
+      }
+
+      .duration-row .duration-bar-track {
+        display: none;
+      }
+
+      .a11y-motion-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ═══ ICONS ═══ */
-    .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 16px; }
-    .icon-item { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px; border-radius: 12px; background: var(--surface-raised); border: 1px solid var(--border-default); }
-    .icon-item .material-symbols-rounded { font-size: 24px; color: var(--ume-cinza-escuro); }
-    .icon-item span:last-child { font-size: 10px; color: var(--text-muted); text-align: center; }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 16px;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 12px;
+      background: var(--surface-raised);
+      border: 1px solid var(--border-default);
+    }
+
+    .icon-item .material-symbols-rounded {
+      font-size: 24px;
+      color: var(--ume-cinza-escuro);
+    }
+
+    .icon-item span:last-child {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+    }
 
     /* ═══ TOKEN TABLE ═══ */
-    .token-table { width: 100%; border-collapse: collapse; background: var(--surface-raised); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-default); }
-    .token-table th { text-align: left; padding: 14px 20px; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-subtle); border-bottom: 1px solid var(--border-default); }
-    .token-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid var(--border-default); }
-    .token-table tr:last-child td { border-bottom: none; }
-    .token-table .swatch-inline { display: inline-block; width: 16px; height: 16px; border-radius: 4px; vertical-align: middle; margin-right: 8px; border: 1px solid rgba(0,0,0,0.08); }
-    .token-table code { font-size: 13px; font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text-secondary); background: var(--surface-muted); padding: 2px 8px; border-radius: 4px; }
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface-raised);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-default);
+    }
+
+    .token-table th {
+      text-align: left;
+      padding: 14px 20px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--surface-subtle);
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .token-table td {
+      padding: 14px 20px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .token-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .token-table .swatch-inline {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-right: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .token-table code {
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: var(--text-secondary);
+      background: var(--surface-muted);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
 
     /* ═══ RESPONSIVE ═══ */
     @media (max-width: 768px) {
-      .brand-dna-grid, .gradient-showcase, .glass-showcase, .gradient-border-showcase, .motion-showcase, .shadow-grid, .glow-showcase { grid-template-columns: 1fr; }
-      .elevation-grid, .surface-demo { grid-template-columns: repeat(2, 1fr); }
-      .color-grid { grid-template-columns: 1fr 1fr; }
-      .cover h1 { font-size: 36px; }
-      .cover { padding: 32px; min-height: 300px; }
+
+      .gradient-showcase,
+      .glass-showcase,
+      .gradient-border-showcase,
+      .motion-showcase,
+      .shadow-grid,
+      .glow-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .elevation-grid,
+      .surface-demo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .color-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cover h1 {
+        font-size: 36px;
+      }
+
+      .cover {
+        padding: 32px;
+        min-height: 300px;
+      }
     }
 
     /* ─── Table of Contents ─── */
-    html { scroll-behavior: smooth; }
-    .ds-toc { position: fixed; top: 80px; right: max(32px, calc((100vw - 1200px) / 2 - 232px)); width: 200px; max-height: calc(100vh - 120px); overflow-y: auto; display: none; z-index: 100; }
-    .ds-toc-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-overline); margin-bottom: 12px; }
-    .ds-toc nav { display: flex; flex-direction: column; gap: 0; }
-    .ds-toc a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 4px 0 4px 12px; border-left: 2px solid transparent; transition: all 150ms; }
-    .ds-toc a:hover { color: var(--text-secondary); }
-    .ds-toc a.toc-active { color: var(--ume-verde-claro); font-weight: 500; border-left-color: var(--ume-verde-claro); }
-    @media (min-width: 1480px) { .ds-toc { display: block; } }
-    section[id] { scroll-margin-top: 72px; }
-    /* ─── Back to Top ─── */
-    .ds-back-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--ume-verde-claro); color: var(--ume-cinza-escuro); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(0,0,0,0.15); opacity: 0; pointer-events: none; transition: opacity 200ms, transform 200ms; z-index: 100; }
-    .ds-back-top.visible { opacity: 1; pointer-events: auto; }
-    .ds-back-top:hover { transform: translateY(-2px); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .logo-light { display: inline-block; }
-    .logo-dark { display: none; }
-    .dark .logo-light { display: none; }
-    .dark .logo-dark { display: inline-block; }
+    .ds-toc {
+      position: fixed;
+      top: 80px;
+      right: max(32px, calc((100vw - 1200px) / 2 - 232px));
+      width: 200px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      display: none;
+      z-index: 100;
+    }
+
+    .ds-toc-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-overline);
+      margin-bottom: 12px;
+    }
+
+    .ds-toc nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ds-toc a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 4px 0 4px 12px;
+      border-left: 2px solid transparent;
+      transition: all 150ms;
+    }
+
+    .ds-toc a:hover {
+      color: var(--text-secondary);
+    }
+
+    .ds-toc a.toc-active {
+      color: var(--ume-verde-claro);
+      font-weight: 500;
+      border-left-color: var(--ume-verde-claro);
+    }
+
+    @media (min-width: 1480px) {
+      .ds-toc {
+        display: block;
+      }
+    }
+
+    section[id] {
+      scroll-margin-top: 72px;
+    }
+
+    /* ─── Back to Top ─── */
+    .ds-back-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: var(--ume-verde-claro);
+      color: var(--ume-cinza-escuro);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 200ms, transform 200ms;
+      z-index: 100;
+    }
+
+    .ds-back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .ds-back-top:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo-light {
+      display: inline-block;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    .dark .logo-light {
+      display: none;
+    }
+
+    .dark .logo-dark {
+      display: inline-block;
+    }
   </style>
 </head>
+
 <body>
-<nav class="ds-nav" aria-label="Navegação do Design System">
-  <div class="ds-nav-inner">
-    <a href="index.html" class="ds-nav-logo">
-      <img src="logos/ume-cinza-escuro.svg" alt="Ume" class="logo-light" style="height: 18px;">
-      <img src="logos/ume-verde-claro.svg" alt="Ume" class="logo-dark" style="height: 18px;">
-    </a>
-    <div class="ds-nav-links">
-      <a href="foundations.html" aria-current="page">Foundations</a>
-      <a href="components.html">Components</a>
-      <a href="patterns.html">Patterns</a>
-      <button type="button" id="theme-toggle" aria-label="Alternar tema claro/escuro">
-        <span class="material-symbols-rounded" style="font-size:20px;">dark_mode</span>
-      </button>
+  <nav class="ds-nav" aria-label="Navegação do Design System">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo">
+        <img src="logos/ume-cinza-escuro.svg" alt="Ume" class="logo-light" style="height: 18px;">
+        <img src="logos/ume-verde-claro.svg" alt="Ume" class="logo-dark" style="height: 18px;">
+      </a>
+      <div class="ds-nav-links">
+        <a href="foundations.html" aria-current="page">Foundations</a>
+        <a href="components.html">Components</a>
+        <a href="patterns.html">Patterns</a>
+        <button type="button" id="theme-toggle" aria-label="Alternar tema claro/escuro">
+          <span class="material-symbols-rounded" style="font-size:20px;">dark_mode</span>
+        </button>
+      </div>
     </div>
-  </div>
-</nav>
-<aside class="ds-toc" aria-label="Índice da página">
-  <div class="ds-toc-title">Conteúdo</div>
-  <nav>
-    <a href="#brand-dna">Como a marca vive na UI</a>
-    <a href="#paleta-de-cores">Paleta de Cores</a>
-    <a href="#gradientes">Dois Gradientes de Marca</a>
-    <a href="#glass-surface">Glass Surface</a>
-    <a href="#gradient-border">Gradient Border</a>
-    <a href="#tipografia">Escala Tipográfica</a>
-    <a href="#espacamento">Unidade Base e Espaçamento</a>
-    <a href="#grid">Sistema de Grid</a>
-    <a href="#breakpoints">Pontos de Quebra Responsivos</a>
-    <a href="#border-radius">Cantos Arredondados</a>
-    <a href="#elevacao">Sistema de Elevação</a>
-    <a href="#motion">Animação e Progressão</a>
-    <a href="#iconografia">Material Symbols — Rounded</a>
-    <a href="#tokens">Mapeamento shadcn/ui</a>
-    <a href="#cor-por-contexto">Lógica de Cor por Contexto</a>
   </nav>
-</aside>
+  <aside class="ds-toc" aria-label="Índice da página">
+    <div class="ds-toc-title">Conteúdo</div>
+    <nav>
+      <a href="#paleta-de-cores">Paleta de Cores</a>
+      <a href="#tokens">Mapeamento shadcn/ui</a>
+      <a href="#cor-por-contexto">Cor por Contexto</a>
+      <a href="#gradientes">Dois Gradientes de Marca</a>
+      <a href="#glass-surface">Glass Surface</a>
+      <a href="#gradient-border">Gradient Border</a>
+      <a href="#tipografia">Escala Tipográfica</a>
+      <a href="#espacamento">Unidade Base e Espaçamento</a>
+      <a href="#grid">Sistema de Grid</a>
+      <a href="#breakpoints">Pontos de Quebra Responsivos</a>
+      <a href="#border-radius">Cantos Arredondados</a>
+      <a href="#elevacao">Sistema de Elevação</a>
+      <a href="#motion">Animação e Progressão</a>
+      <a href="#iconografia">Material Symbols — Rounded</a>
+    </nav>
+  </aside>
   <div class="page">
 
     <!-- ═══ COVER ═══ -->
     <div class="cover">
       <span class="overline">Design System</span>
       <h1>Ume Design<br>System</h1>
-      <p class="subtitle">Progressão visual que comunica crescimento, transformação e a jornada contínua de pessoas e negócios.</p>
+      <p class="subtitle">Progressão visual que comunica crescimento, transformação e a jornada contínua de pessoas e
+        negócios.</p>
     </div>
-
-    <!-- ═══ BRAND DNA ═══ -->
-    <section id="brand-dna">
-      <div class="section-header">
-        <div class="overline">Brand DNA</div>
-        <h2>Como a marca vive na UI</h2>
-        <p>Cada elemento do grafismo 3D — formas cristalinas, progressão diagonal, transparência — se traduz em primitivas de interface.</p>
-      </div>
-      <div class="brand-dna-grid">
-        <div class="dna-card">
-          <div class="icon-wrap"><span class="material-symbols-rounded">blur_on</span></div>
-          <h3>Glass Surface</h3>
-          <p>Superfícies translúcidas com backdrop-blur referenciam as formas cristalinas do grafismo 3D. Usadas em cards elevados, overlays e sidebars sobre gradientes.</p>
-        </div>
-        <div class="dna-card">
-          <div class="icon-wrap"><span class="material-symbols-rounded">gradient</span></div>
-          <h3>Gradient Border</h3>
-          <p>Bordas com gradiente verde→roxo representam o fluxo de energia e transformação. Usadas em cards de destaque, inputs em foco e elementos de marca.</p>
-        </div>
-        <div class="dna-card">
-          <div class="icon-wrap"><span class="material-symbols-rounded">stacked_line_chart</span></div>
-          <h3>Progressive Stagger</h3>
-          <p>Elementos que surgem em sequência traduzem a "progressão visual" do grafismo. Usada em listas, grids de cards e dashboards.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- ═══ COLOR PALETTE ═══ -->
     <section id="paleta-de-cores">
@@ -472,40 +2070,112 @@
       </div>
       <div class="color-grid">
         <div class="color-card">
-          <div class="swatch" style="background: #1A1A1A;"><span style="color:#FFF; background:rgba(255,255,255,0.15)">Dark</span></div>
-          <div class="info"><div class="name">Cinza Escuro</div><div class="hex">#1A1A1A</div><div class="usage">Texto padrão, backgrounds dark</div></div>
+          <div class="swatch" style="background: #1A1A1A;"><span
+              style="color:#FFF; background:rgba(255,255,255,0.15)">Dark</span></div>
+          <div class="info">
+            <div class="name">Cinza Escuro</div>
+            <div class="hex-row">
+              <div class="hex">#1A1A1A</div><button type="button" class="copy-btn" data-hex="#1A1A1A"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Texto padrão, backgrounds dark</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #014751;"><span style="color:#09CF7C; background:rgba(9,207,124,0.15)">Authority</span></div>
-          <div class="info"><div class="name">Verde Escuro</div><div class="hex">#014751</div><div class="usage">Sidebar, headers, seções institucionais</div></div>
+          <div class="swatch" style="background: #014751;"><span
+              style="color:#09CF7C; background:rgba(9,207,124,0.15)">Authority</span></div>
+          <div class="info">
+            <div class="name">Verde Escuro</div>
+            <div class="hex-row">
+              <div class="hex">#014751</div><button type="button" class="copy-btn" data-hex="#014751"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Sidebar, headers, seções institucionais</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #038C52;"><span style="color:#FFF; background:rgba(255,255,255,0.15)">Active</span></div>
-          <div class="info"><div class="name">Verde Médio</div><div class="hex">#038C52</div><div class="usage">Estados ativos, success, métricas</div></div>
+          <div class="swatch" style="background: #038C52;"><span
+              style="color:#FFF; background:rgba(255,255,255,0.15)">Active</span></div>
+          <div class="info">
+            <div class="name">Verde Médio</div>
+            <div class="hex-row">
+              <div class="hex">#038C52</div><button type="button" class="copy-btn" data-hex="#038C52"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Estados ativos, success, métricas</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #09CF7C;"><span style="color:#1A1A1A; background:rgba(0,0,0,0.08)">Primary</span></div>
-          <div class="info"><div class="name">Verde Claro</div><div class="hex">#09CF7C</div><div class="usage">CTA principal, accent, overlines</div></div>
+          <div class="swatch" style="background: #09CF7C;"><span
+              style="color:#1A1A1A; background:rgba(0,0,0,0.08)">Primary</span></div>
+          <div class="info">
+            <div class="name">Verde Claro</div>
+            <div class="hex-row">
+              <div class="hex">#09CF7C</div><button type="button" class="copy-btn" data-hex="#09CF7C"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">CTA principal, accent, overlines</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #974AFD;"><span style="color:#FFF; background:rgba(255,255,255,0.2)">Accent</span></div>
-          <div class="info"><div class="name">Roxo</div><div class="hex">#974AFD</div><div class="usage">Links, ações secundárias, focus ring</div></div>
+          <div class="swatch" style="background: #974AFD;"><span
+              style="color:#FFF; background:rgba(255,255,255,0.2)">Accent</span></div>
+          <div class="info">
+            <div class="name">Roxo</div>
+            <div class="hex-row">
+              <div class="hex">#974AFD</div><button type="button" class="copy-btn" data-hex="#974AFD"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Links, ações secundárias, focus ring</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #CEC1F7;"><span style="color:#1A1A1A; background:rgba(0,0,0,0.06)">Soft</span></div>
-          <div class="info"><div class="name">Lavanda</div><div class="hex">#CEC1F7</div><div class="usage">Tags, badges, ícones em dark</div></div>
+          <div class="swatch" style="background: #CEC1F7;"><span
+              style="color:#1A1A1A; background:rgba(0,0,0,0.06)">Soft</span></div>
+          <div class="info">
+            <div class="name">Lavanda</div>
+            <div class="hex-row">
+              <div class="hex">#CEC1F7</div><button type="button" class="copy-btn" data-hex="#CEC1F7"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Tags, badges, ícones em dark</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #ABF4C4;"><span style="color:#014751; background:rgba(1,71,81,0.1)">Light</span></div>
-          <div class="info"><div class="name">Menta</div><div class="hex">#ABF4C4</div><div class="usage">Backgrounds leves, features</div></div>
+          <div class="swatch" style="background: #ABF4C4;"><span
+              style="color:#014751; background:rgba(1,71,81,0.1)">Light</span></div>
+          <div class="info">
+            <div class="name">Menta</div>
+            <div class="hex-row">
+              <div class="hex">#ABF4C4</div><button type="button" class="copy-btn" data-hex="#ABF4C4"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Backgrounds leves, features</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #F2F2F2;"><span style="color:#555; background:rgba(0,0,0,0.06)">Neutral</span></div>
-          <div class="info"><div class="name">Cinza Claro</div><div class="hex">#F2F2F2</div><div class="usage">Backgrounds neutros, card fills</div></div>
+          <div class="swatch" style="background: #F2F2F2;"><span
+              style="color:#555; background:rgba(0,0,0,0.06)">Neutral</span></div>
+          <div class="info">
+            <div class="name">Cinza Claro</div>
+            <div class="hex-row">
+              <div class="hex">#F2F2F2</div><button type="button" class="copy-btn" data-hex="#F2F2F2"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Backgrounds neutros, card fills</div>
+          </div>
         </div>
         <div class="color-card">
-          <div class="swatch" style="background: #FFFFFF; border-bottom: 1px solid #E5E5E5;"><span style="color:#555; background:rgba(0,0,0,0.06)">Base</span></div>
-          <div class="info"><div class="name">Branco</div><div class="hex">#FFFFFF</div><div class="usage">Texto em dark, card backgrounds</div></div>
+          <div class="swatch" style="background: #FFFFFF; border-bottom: 1px solid #E5E5E5;"><span
+              style="color:#555; background:rgba(0,0,0,0.06)">Base</span></div>
+          <div class="info">
+            <div class="name">Branco</div>
+            <div class="hex-row">
+              <div class="hex">#FFFFFF</div><button type="button" class="copy-btn" data-hex="#FFFFFF"><span
+                  class="material-symbols-rounded" style="font-size:14px;">content_copy</span></button>
+            </div>
+            <div class="usage">Texto em dark, card backgrounds</div>
+          </div>
         </div>
       </div>
 
@@ -513,49 +2183,210 @@
       <div class="scale-section">
         <div class="scale-label">Green Scale</div>
         <div class="scale-strip">
-          <div class="step" style="background:#E6FAF0; color:#014751;">50</div>
-          <div class="step" style="background:#B3F1D5; color:#014751;">100</div>
-          <div class="step" style="background:#80E8BA; color:#014751;">200</div>
-          <div class="step" style="background:#4DDF9F; color:#014751;">300</div>
-          <div class="step" style="background:#09CF7C; color:#1A1A1A;">400</div>
-          <div class="step" style="background:#07B56C; color:#FFF;">500</div>
-          <div class="step" style="background:#038C52; color:#FFF;">600</div>
-          <div class="step" style="background:#026B3F; color:#FFF;">700</div>
-          <div class="step" style="background:#014A2C; color:#FFF;">800</div>
-          <div class="step" style="background:#014751; color:#09CF7C;">900</div>
+          <div class="step" style="background:#E6FAF0; color:#014751;" data-hex="#E6FAF0">50<span
+              class="step-hex">#E6FAF0</span></div>
+          <div class="step" style="background:#B3F1D5; color:#014751;" data-hex="#B3F1D5">100<span
+              class="step-hex">#B3F1D5</span></div>
+          <div class="step" style="background:#80E8BA; color:#014751;" data-hex="#80E8BA">200<span
+              class="step-hex">#80E8BA</span></div>
+          <div class="step" style="background:#4DDF9F; color:#014751;" data-hex="#4DDF9F">300<span
+              class="step-hex">#4DDF9F</span></div>
+          <div class="step" style="background:#09CF7C; color:#1A1A1A;" data-hex="#09CF7C">400<span
+              class="step-hex">#09CF7C</span></div>
+          <div class="step" style="background:#07B56C; color:#FFF;" data-hex="#07B56C">500<span
+              class="step-hex">#07B56C</span></div>
+          <div class="step" style="background:#038C52; color:#FFF;" data-hex="#038C52">600<span
+              class="step-hex">#038C52</span></div>
+          <div class="step" style="background:#026B3F; color:#FFF;" data-hex="#026B3F">700<span
+              class="step-hex">#026B3F</span></div>
+          <div class="step" style="background:#014A2C; color:#FFF;" data-hex="#014A2C">800<span
+              class="step-hex">#014A2C</span></div>
+          <div class="step" style="background:#014751; color:#09CF7C;" data-hex="#014751">900<span
+              class="step-hex">#014751</span></div>
         </div>
       </div>
       <div class="scale-section">
         <div class="scale-label">Purple Scale</div>
         <div class="scale-strip">
-          <div class="step" style="background:#F3ECFE; color:#4A1890;">50</div>
-          <div class="step" style="background:#E1CFFC; color:#4A1890;">100</div>
-          <div class="step" style="background:#CEC1F7; color:#4A1890;">200</div>
-          <div class="step" style="background:#B88FFE; color:#FFF;">300</div>
-          <div class="step" style="background:#974AFD; color:#FFF;">400</div>
-          <div class="step" style="background:#7B30E0; color:#FFF;">500</div>
-          <div class="step" style="background:#6020B8; color:#FFF;">600</div>
-          <div class="step" style="background:#4A1890; color:#FFF;">700</div>
-          <div class="step" style="background:#351068; color:#FFF;">800</div>
-          <div class="step" style="background:#200A40; color:#CEC1F7;">900</div>
+          <div class="step" style="background:#F3ECFE; color:#4A1890;" data-hex="#F3ECFE">50<span
+              class="step-hex">#F3ECFE</span></div>
+          <div class="step" style="background:#E1CFFC; color:#4A1890;" data-hex="#E1CFFC">100<span
+              class="step-hex">#E1CFFC</span></div>
+          <div class="step" style="background:#CEC1F7; color:#4A1890;" data-hex="#CEC1F7">200<span
+              class="step-hex">#CEC1F7</span></div>
+          <div class="step" style="background:#B88FFE; color:#FFF;" data-hex="#B88FFE">300<span
+              class="step-hex">#B88FFE</span></div>
+          <div class="step" style="background:#974AFD; color:#FFF;" data-hex="#974AFD">400<span
+              class="step-hex">#974AFD</span></div>
+          <div class="step" style="background:#7B30E0; color:#FFF;" data-hex="#7B30E0">500<span
+              class="step-hex">#7B30E0</span></div>
+          <div class="step" style="background:#6020B8; color:#FFF;" data-hex="#6020B8">600<span
+              class="step-hex">#6020B8</span></div>
+          <div class="step" style="background:#4A1890; color:#FFF;" data-hex="#4A1890">700<span
+              class="step-hex">#4A1890</span></div>
+          <div class="step" style="background:#351068; color:#FFF;" data-hex="#351068">800<span
+              class="step-hex">#351068</span></div>
+          <div class="step" style="background:#200A40; color:#CEC1F7;" data-hex="#200A40">900<span
+              class="step-hex">#200A40</span></div>
         </div>
       </div>
       <div class="scale-section">
         <div class="scale-label">Gray Scale</div>
         <div class="scale-strip">
-          <div class="step" style="background:#FAFAFA; color:#555;">50</div>
-          <div class="step" style="background:#F2F2F2; color:#555;">100</div>
-          <div class="step" style="background:#E5E5E5; color:#333;">200</div>
-          <div class="step" style="background:#CCCCCC; color:#333;">300</div>
-          <div class="step" style="background:#767676; color:#FFF;">400</div>
-          <div class="step" style="background:#555555; color:#FFF;">500</div>
-          <div class="step" style="background:#4D4D4D; color:#FFF;">600</div>
-          <div class="step" style="background:#333333; color:#FFF;">700</div>
-          <div class="step" style="background:#262626; color:#FFF;">800</div>
-          <div class="step" style="background:#1A1A1A; color:#FFF;">900</div>
+          <div class="step" style="background:#FAFAFA; color:#555;" data-hex="#FAFAFA">50<span
+              class="step-hex">#FAFAFA</span></div>
+          <div class="step" style="background:#F2F2F2; color:#555;" data-hex="#F2F2F2">100<span
+              class="step-hex">#F2F2F2</span></div>
+          <div class="step" style="background:#E5E5E5; color:#333;" data-hex="#E5E5E5">200<span
+              class="step-hex">#E5E5E5</span></div>
+          <div class="step" style="background:#CCCCCC; color:#333;" data-hex="#CCCCCC">300<span
+              class="step-hex">#CCCCCC</span></div>
+          <div class="step" style="background:#767676; color:#FFF;" data-hex="#767676">400<span
+              class="step-hex">#767676</span></div>
+          <div class="step" style="background:#555555; color:#FFF;" data-hex="#555555">500<span
+              class="step-hex">#555555</span></div>
+          <div class="step" style="background:#4D4D4D; color:#FFF;" data-hex="#4D4D4D">600<span
+              class="step-hex">#4D4D4D</span></div>
+          <div class="step" style="background:#333333; color:#FFF;" data-hex="#333333">700<span
+              class="step-hex">#333333</span></div>
+          <div class="step" style="background:#262626; color:#FFF;" data-hex="#262626">800<span
+              class="step-hex">#262626</span></div>
+          <div class="step" style="background:#1A1A1A; color:#FFF;" data-hex="#1A1A1A">900<span
+              class="step-hex">#1A1A1A</span></div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══ SHADCN MAPPING ═══ -->
+    <section id="tokens">
+      <div class="section-header">
+        <div class="overline">Tokens</div>
+        <h2>Mapeamento shadcn/ui</h2>
+        <p>Como as CSS variables do shadcn mapeiam para a paleta Ume.</p>
+      </div>
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>shadcn Variable</th>
+            <th>Ume Color</th>
+            <th>HSL Value</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>--primary</code></td>
+            <td><span class="swatch-inline" style="background:#09CF7C;"></span>Verde Claro</td>
+            <td>153 93% 42%</td>
+            <td>Botão primário, CTA, accent</td>
+          </tr>
+          <tr>
+            <td><code>--secondary</code></td>
+            <td><span class="swatch-inline" style="background:#014751;"></span>Verde Escuro</td>
+            <td>188 97% 16%</td>
+            <td>Sidebar, seções de autoridade</td>
+          </tr>
+          <tr>
+            <td><code>--accent</code></td>
+            <td><span class="swatch-inline" style="background:#974AFD;"></span>Roxo</td>
+            <td>267 97% 64%</td>
+            <td>Links, focus ring, ações secundárias</td>
+          </tr>
+          <tr>
+            <td><code>--destructive</code></td>
+            <td><span class="swatch-inline" style="background:#E53E3E;"></span>Error Red</td>
+            <td>0 72% 51%</td>
+            <td>Erros, ações destrutivas</td>
+          </tr>
+          <tr>
+            <td><code>--muted</code></td>
+            <td><span class="swatch-inline" style="background:#F2F2F2;"></span>Cinza Claro</td>
+            <td>0 0% 95%</td>
+            <td>Backgrounds neutros</td>
+          </tr>
+          <tr>
+            <td><code>--background</code></td>
+            <td><span class="swatch-inline" style="background:#FFFFFF;"></span>Branco</td>
+            <td>0 0% 100%</td>
+            <td>Background de página</td>
+          </tr>
+          <tr>
+            <td><code>--foreground</code></td>
+            <td><span class="swatch-inline" style="background:#1A1A1A;"></span>Cinza Escuro</td>
+            <td>0 0% 10%</td>
+            <td>Texto principal</td>
+          </tr>
+          <tr>
+            <td><code>--ring</code></td>
+            <td><span class="swatch-inline" style="background:#974AFD;"></span>Roxo</td>
+            <td>267 97% 64%</td>
+            <td>Focus ring (acessibilidade)</td>
+          </tr>
+          <tr>
+            <td><code>--sidebar-background</code></td>
+            <td><span class="swatch-inline" style="background:#014751;"></span>Verde Escuro</td>
+            <td>188 97% 16%</td>
+            <td>Sidebar background</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══ CONTEXT TABLE ═══ -->
+    <section id="cor-por-contexto">
+      <div class="section-header">
+        <div class="overline">Usage</div>
+        <h2>Lógica de Cor por Contexto</h2>
+      </div>
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>Contexto</th>
+            <th>Background</th>
+            <th>Texto</th>
+            <th>Accent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Autoridade / Institucional</td>
+            <td>Dark Gradient ou Verde Escuro</td>
+            <td>Branco / Verde Claro</td>
+            <td>Verde Claro</td>
+          </tr>
+          <tr>
+            <td>Conteúdo / Informativo</td>
+            <td>Branco ou Cinza Claro</td>
+            <td>Cinza Escuro</td>
+            <td>Verde Médio ou Roxo</td>
+          </tr>
+          <tr>
+            <td>Dados / Analytics</td>
+            <td>Branco ou Cinza Claro</td>
+            <td>Cinza Escuro</td>
+            <td>Chart palette</td>
+          </tr>
+          <tr>
+            <td>Marca / Cultura</td>
+            <td>Light Gradient</td>
+            <td>Cinza Escuro / Verde Escuro</td>
+            <td>Verde Escuro</td>
+          </tr>
+          <tr>
+            <td>Destaque / CTA</td>
+            <td>Dark Gradient ou Verde Escuro</td>
+            <td>Branco</td>
+            <td>Verde Claro</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ GRADIENTS ═══ -->
     <section id="gradientes">
@@ -568,48 +2399,92 @@
         <div class="gradient-card gradient-dark">
           <h3>Dark Gradient</h3>
           <p>Aberturas, seções estratégicas, momentos de autoridade.</p>
-          <code>linear-gradient(135deg, #1A1A1A 0%, #2D1520 15%, #1A2A2A 35%, #014751 55%, #038C52 80%, #09CF7C 100%)</code>
+          <details class="props-accordion">
+            <summary><span class="material-symbols-rounded">expand_more</span> Ver propriedades</summary>
+            <div class="props-content">
+              <code
+                data-props="linear-gradient(135deg, #1A1A1A 0%, #2D1520 15%, #1A2A2A 35%, #014751 55%, #038C52 80%, #09CF7C 100%)">linear-gradient(135deg, #1A1A1A 0%, #2D1520 15%, #1A2A2A 35%, #014751 55%, #038C52 80%, #09CF7C 100%)</code>
+              <button type="button" class="props-copy"><span class="material-symbols-rounded"
+                  style="font-size:14px;">content_copy</span></button>
+            </div>
+          </details>
         </div>
         <div class="gradient-card gradient-light">
           <h3>Light Gradient</h3>
           <p>Momentos de marca, cultura, fechamentos.</p>
-          <code>linear-gradient(180deg, #09CF7C 0%, #12C27E 20%, #6FB8C8 40%, #7AAFD3 60%, #C6B4E5 80%, #D2C4EE 100%)</code>
+          <details class="props-accordion">
+            <summary><span class="material-symbols-rounded">expand_more</span> Ver propriedades</summary>
+            <div class="props-content">
+              <code
+                data-props="linear-gradient(180deg, #09CF7C 0%, #12C27E 20%, #6FB8C8 40%, #7AAFD3 60%, #C6B4E5 80%, #D2C4EE 100%)">linear-gradient(180deg, #09CF7C 0%, #12C27E 20%, #6FB8C8 40%, #7AAFD3 60%, #C6B4E5 80%, #D2C4EE 100%)</code>
+              <button type="button" class="props-copy"><span class="material-symbols-rounded"
+                  style="font-size:14px;">content_copy</span></button>
+            </div>
+          </details>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ GLASS EFFECTS ═══ -->
     <section id="glass-surface">
       <div class="section-header">
         <div class="overline">Brand Signature</div>
         <h2>Glass Surface</h2>
-        <p>Inspirado nas formas cristalinas do grafismo 3D. Três níveis de transparência criam profundidade dimensional.</p>
+        <p>Três níveis de transparência inspirados nas formas cristalinas do grafismo 3D.</p>
       </div>
       <div class="glass-showcase">
         <div class="glass-card glass-level-1">
           <h4>Level 1 — Subtle</h4>
           <p>Background sutil. Para containers grandes, sidebars e áreas de navegação.</p>
-          <code>bg: rgba(255,255,255,0.08)<br>blur: 12px<br>border: rgba(255,255,255,0.1)</code>
+          <details class="props-accordion">
+            <summary><span class="material-symbols-rounded">expand_more</span> Ver propriedades</summary>
+            <div class="props-content">
+              <code
+                data-props="bg: rgba(255,255,255,0.08); blur: 12px; border: rgba(255,255,255,0.1)">bg: rgba(255,255,255,0.08)<br>blur: 12px<br>border: rgba(255,255,255,0.1)</code>
+              <button type="button" class="props-copy"><span class="material-symbols-rounded"
+                  style="font-size:14px;">content_copy</span></button>
+            </div>
+          </details>
         </div>
         <div class="glass-card glass-level-2">
           <h4>Level 2 — Medium</h4>
           <p>Cards elevados, dropdowns e popovers sobre gradientes.</p>
-          <code>bg: rgba(255,255,255,0.14)<br>blur: 16px<br>border: rgba(255,255,255,0.18)</code>
+          <details class="props-accordion">
+            <summary><span class="material-symbols-rounded">expand_more</span> Ver propriedades</summary>
+            <div class="props-content">
+              <code
+                data-props="bg: rgba(255,255,255,0.14); blur: 16px; border: rgba(255,255,255,0.18)">bg: rgba(255,255,255,0.14)<br>blur: 16px<br>border: rgba(255,255,255,0.18)</code>
+              <button type="button" class="props-copy"><span class="material-symbols-rounded"
+                  style="font-size:14px;">content_copy</span></button>
+            </div>
+          </details>
         </div>
         <div class="glass-card glass-level-3">
           <h4>Level 3 — Strong</h4>
           <p>Destaque máximo. Modais, tooltips e elementos de foco sobre gradientes.</p>
-          <code>bg: rgba(255,255,255,0.22)<br>blur: 24px<br>border: rgba(255,255,255,0.25)<br>+ green glow</code>
+          <details class="props-accordion">
+            <summary><span class="material-symbols-rounded">expand_more</span> Ver propriedades</summary>
+            <div class="props-content">
+              <code
+                data-props="bg: rgba(255,255,255,0.22); blur: 24px; border: rgba(255,255,255,0.25); + green glow">bg: rgba(255,255,255,0.22)<br>blur: 24px<br>border: rgba(255,255,255,0.25)<br>+ green glow</code>
+              <button type="button" class="props-copy"><span class="material-symbols-rounded"
+                  style="font-size:14px;">content_copy</span></button>
+            </div>
+          </details>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ GRADIENT BORDERS ═══ -->
     <section id="gradient-border">
       <div class="section-header">
         <div class="overline">Brand Signature</div>
         <h2>Gradient Border</h2>
-        <p>A borda gradiente traduz o fluxo de energia e transformação. Três variações para diferentes contextos.</p>
+        <p>Três variações de borda gradiente para diferentes contextos.</p>
       </div>
       <div class="gradient-border-showcase">
         <div class="gb-card">
@@ -628,246 +2503,419 @@
       </div>
     </section>
 
+    <hr class="section-divider">
+
     <!-- ═══ TYPOGRAPHY ═══ -->
     <section id="tipografia">
       <div class="section-header">
         <div class="overline">Typography</div>
         <h2>Escala Tipográfica</h2>
-        <p>Aeonik Fono para títulos. Aeonik para corpo. Line-heights snapped ao grid de 4px para alinhamento perfeito com ícones e elementos adjacentes.</p>
+        <p>Aeonik Fono para títulos, Aeonik para corpo — line-heights snapped ao grid de 4px.</p>
       </div>
 
       <!-- Type Scale with Grid-Snapped Line Heights -->
       <div class="type-showcase">
         <div class="type-row">
           <div class="type-label">Display</div>
-          <div class="type-sample" style="font-size: 56px; font-weight: 500; line-height: 64px; letter-spacing: -0.02em;">Crescimento</div>
+          <div class="type-sample"
+            style="font-size: 56px; font-weight: 500; line-height: 64px; letter-spacing: -0.02em;">Crescimento</div>
           <div class="type-meta">56px / 64px <span class="type-grid-badge">16u</span><br>Aeonik Fono · -0.02em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H1</div>
-          <div class="type-sample" style="font-size: 48px; font-weight: 500; line-height: 60px; letter-spacing: -0.02em;">Transformação</div>
+          <div class="type-sample"
+            style="font-size: 48px; font-weight: 500; line-height: 60px; letter-spacing: -0.02em;">Transformação</div>
           <div class="type-meta">48px / 60px <span class="type-grid-badge">15u</span><br>Aeonik Fono · -0.02em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H2</div>
-          <div class="type-sample" style="font-size: 36px; font-weight: 500; line-height: 44px; letter-spacing: -0.02em;">Jornada contínua</div>
+          <div class="type-sample"
+            style="font-size: 36px; font-weight: 500; line-height: 44px; letter-spacing: -0.02em;">Jornada contínua
+          </div>
           <div class="type-meta">36px / 44px <span class="type-grid-badge">11u</span><br>Aeonik Fono · -0.02em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H3</div>
-          <div class="type-sample" style="font-size: 24px; font-weight: 500; line-height: 32px; letter-spacing: -0.02em;">Evolução constante</div>
+          <div class="type-sample"
+            style="font-size: 24px; font-weight: 500; line-height: 32px; letter-spacing: -0.02em;">Evolução constante
+          </div>
           <div class="type-meta">24px / 32px <span class="type-grid-badge">8u</span><br>Aeonik Fono · -0.02em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H4</div>
-          <div class="type-sample" style="font-size: 20px; font-weight: 500; line-height: 28px; letter-spacing: -0.01em;">Flexibilidade</div>
+          <div class="type-sample"
+            style="font-size: 20px; font-weight: 500; line-height: 28px; letter-spacing: -0.01em;">Flexibilidade</div>
           <div class="type-meta">20px / 28px <span class="type-grid-badge">7u</span><br>Aeonik Fono · -0.01em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H5</div>
-          <div class="type-sample" style="font-size: 18px; font-weight: 500; line-height: 24px; letter-spacing: -0.01em;">Simplicidade</div>
+          <div class="type-sample"
+            style="font-size: 18px; font-weight: 500; line-height: 24px; letter-spacing: -0.01em;">Simplicidade</div>
           <div class="type-meta">18px / 24px <span class="type-grid-badge">6u</span><br>Aeonik Fono · -0.01em</div>
         </div>
         <div class="type-row">
           <div class="type-label">H6</div>
-          <div class="type-sample" style="font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.01em;">Consistência</div>
+          <div class="type-sample"
+            style="font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.01em;">Consistência</div>
           <div class="type-meta">16px / 24px <span class="type-grid-badge">6u</span><br>Aeonik Fono · -0.01em</div>
         </div>
         <div class="type-row">
           <div class="type-label">Body LG</div>
-          <div class="type-sample" style="font-size: 18px; font-weight: 300; line-height: 28px; font-family: var(--font-body);">A plataforma que transforma o crédito no maior motor de crescimento.</div>
+          <div class="type-sample"
+            style="font-size: 18px; font-weight: 300; line-height: 28px; font-family: var(--font-body);">A plataforma
+            que transforma o crédito no maior motor de crescimento.</div>
           <div class="type-meta">18px / 28px <span class="type-grid-badge">7u</span><br>Aeonik Light</div>
         </div>
         <div class="type-row">
           <div class="type-label">Body</div>
-          <div class="type-sample" style="font-size: 16px; font-weight: 300; line-height: 24px; font-family: var(--font-body);">Sua progressão visual comunica flexibilidade e evolução constante.</div>
+          <div class="type-sample"
+            style="font-size: 16px; font-weight: 300; line-height: 24px; font-family: var(--font-body);">Sua progressão
+            visual comunica flexibilidade e evolução constante.</div>
           <div class="type-meta">16px / 24px <span class="type-grid-badge">6u</span><br>Aeonik Light</div>
         </div>
         <div class="type-row">
           <div class="type-label">Body SM</div>
-          <div class="type-sample" style="font-size: 14px; font-weight: 300; line-height: 24px; font-family: var(--font-body);">Capacidade de atuar em diferentes contextos e momentos.</div>
+          <div class="type-sample"
+            style="font-size: 14px; font-weight: 300; line-height: 24px; font-family: var(--font-body);">Capacidade de
+            atuar em diferentes contextos e momentos.</div>
           <div class="type-meta">14px / 24px <span class="type-grid-badge">6u</span><br>Aeonik Light</div>
         </div>
         <div class="type-row">
           <div class="type-label">Caption</div>
-          <div class="type-sample" style="font-size: 12px; font-weight: 300; line-height: 20px; font-family: var(--font-body); color: var(--text-secondary); letter-spacing: 0.01em;">Elemento central do sistema visual.</div>
+          <div class="type-sample"
+            style="font-size: 12px; font-weight: 300; line-height: 20px; font-family: var(--font-body); color: var(--text-secondary); letter-spacing: 0.01em;">
+            Elemento central do sistema visual.</div>
           <div class="type-meta">12px / 20px <span class="type-grid-badge">5u</span><br>Aeonik Light · +0.01em</div>
         </div>
         <div class="type-row">
           <div class="type-label">Overline</div>
-          <div class="type-sample" style="font-size: 11px; font-weight: 500; line-height: 20px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); color: var(--text-overline);">Plataforma</div>
+          <div class="type-sample"
+            style="font-size: 11px; font-weight: 500; line-height: 20px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); color: var(--text-overline);">
+            Plataforma</div>
           <div class="type-meta">11px / 20px <span class="type-grid-badge">5u</span><br>Aeonik Medium · 0.1em</div>
         </div>
       </div>
 
       <!-- Readability: Tracking, Leading & Measure -->
-      <div style="margin-top: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Legibilidade</h3>
-        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; max-width: 65ch;">Tracking (letter-spacing), leading (line-height) e measure (comprimento de linha) otimizados para cada nível da escala tipográfica.</p>
-      </div>
+      <details class="section-accordion" style="margin-top: 48px;">
+        <summary>
+          <h3 class="sub-header" style="display: inline; margin-bottom: 0;">Legibilidade</h3>
+          <span class="material-symbols-rounded"
+            style="font-size: 20px; vertical-align: middle; margin-left: 8px;">expand_more</span>
+        </summary>
+        <p
+          style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; margin-top: 8px; max-width: 65ch;">
+          Tracking (letter-spacing), leading (line-height) e measure (comprimento de linha) otimizados para cada nível
+          da escala tipográfica.</p>
 
-      <div class="readability-demo">
-        <h4>Tracking (letter-spacing)</h4>
-        <div class="readability-row">
-          <div class="readability-label">Display & H1</div>
-          <div class="readability-value"><code>-0.02em</code> — Tracking negativo para títulos grandes. Compensa o espaçamento visual que aumenta com o tamanho.</div>
+        <div class="readability-demo">
+          <h4>Tracking (letter-spacing)</h4>
+          <div class="readability-row">
+            <div class="readability-label">Display & H1</div>
+            <div class="readability-value"><code>-0.02em</code> — Tracking negativo para títulos grandes. Compensa o
+              espaçamento visual que aumenta com o tamanho.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">H2 & H3</div>
+            <div class="readability-value"><code>-0.02em</code> — Mesmo tracking negativo, mantendo coesão visual nos
+              headings.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">H4 – H6</div>
+            <div class="readability-value"><code>-0.01em</code> — Tracking levemente negativo para subheadings.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">Body</div>
+            <div class="readability-value"><code>0em</code> — Tracking padrão. O design da Aeonik já é otimizado para
+              leitura.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">Caption & Small</div>
+            <div class="readability-value"><code>+0.01em</code> — Leve abertura para melhorar legibilidade em tamanhos
+              pequenos.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">Overline</div>
+            <div class="readability-value"><code>+0.1em</code> — Tracking largo para texto uppercase, compensando o peso
+              visual das maiúsculas.</div>
+          </div>
         </div>
-        <div class="readability-row">
-          <div class="readability-label">H2 & H3</div>
-          <div class="readability-value"><code>-0.02em</code> — Mesmo tracking negativo, mantendo coesão visual nos headings.</div>
-        </div>
-        <div class="readability-row">
-          <div class="readability-label">H4 – H6</div>
-          <div class="readability-value"><code>-0.01em</code> — Tracking levemente negativo para subheadings.</div>
-        </div>
-        <div class="readability-row">
-          <div class="readability-label">Body</div>
-          <div class="readability-value"><code>0em</code> — Tracking padrão. O design da Aeonik já é otimizado para leitura.</div>
-        </div>
-        <div class="readability-row">
-          <div class="readability-label">Caption & Small</div>
-          <div class="readability-value"><code>+0.01em</code> — Leve abertura para melhorar legibilidade em tamanhos pequenos.</div>
-        </div>
-        <div class="readability-row">
-          <div class="readability-label">Overline</div>
-          <div class="readability-value"><code>+0.1em</code> — Tracking largo para texto uppercase, compensando o peso visual das maiúsculas.</div>
-        </div>
-      </div>
 
-      <div class="readability-demo">
-        <h4>Measure (comprimento de linha)</h4>
-        <div class="readability-row">
-          <div class="readability-label">Prosa padrão</div>
-          <div class="readability-value"><code>max-width: 65ch</code> — Ideal para parágrafos de corpo. Aproximadamente 65 caracteres por linha (recomendação: 45–75ch).</div>
+        <div class="readability-demo">
+          <h4>Measure (comprimento de linha)</h4>
+          <div class="readability-row">
+            <div class="readability-label">Prosa padrão</div>
+            <div class="readability-value"><code>max-width: 65ch</code> — Ideal para parágrafos de corpo.
+              Aproximadamente 65 caracteres por linha (recomendação: 45–75ch).</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">Prosa larga</div>
+            <div class="readability-value"><code>max-width: 75ch</code> — Para leitura longa, documentação. Limite
+              superior de conforto.</div>
+          </div>
+          <div class="readability-row">
+            <div class="readability-label">Prosa estreita</div>
+            <div class="readability-value"><code>max-width: 45ch</code> — Captions, descrições curtas, mobile. Limite
+              inferior de conforto.</div>
+          </div>
+          <div style="margin-top: 16px; padding: 16px; background: var(--surface-muted); border-radius: 8px;">
+            <p style="font-size: 16px; line-height: 24px; max-width: 65ch; font-family: var(--font-body);">Este
+              parágrafo demonstra o comprimento ideal de linha com <code>max-width: 65ch</code>. O olho consegue voltar
+              ao início da próxima linha sem perder o ponto de leitura, resultando em uma experiência de leitura fluida
+              e confortável.</p>
+          </div>
         </div>
-        <div class="readability-row">
-          <div class="readability-label">Prosa larga</div>
-          <div class="readability-value"><code>max-width: 75ch</code> — Para leitura longa, documentação. Limite superior de conforto.</div>
-        </div>
-        <div class="readability-row">
-          <div class="readability-label">Prosa estreita</div>
-          <div class="readability-value"><code>max-width: 45ch</code> — Captions, descrições curtas, mobile. Limite inferior de conforto.</div>
-        </div>
-        <div style="margin-top: 16px; padding: 16px; background: var(--surface-muted); border-radius: 8px;">
-          <p style="font-size: 16px; line-height: 24px; max-width: 65ch; font-family: var(--font-body);">Este parágrafo demonstra o comprimento ideal de linha com <code>max-width: 65ch</code>. O olho consegue voltar ao início da próxima linha sem perder o ponto de leitura, resultando em uma experiência de leitura fluida e confortável.</p>
-        </div>
-      </div>
+      </details>
 
       <!-- Icon + Text Alignment -->
-      <div style="margin-top: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Alinhamento Ícone + Texto</h3>
-        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; max-width: 65ch;">Ícones de 20px e 24px se alinham perfeitamente com a escala tipográfica graças ao line-height snapped ao grid de 4px.</p>
-      </div>
+      <h3 class="sub-header" style="margin-top: 48px;">Alinhamento Ícone + Texto <span class="sub-desc">— Ícones de 20px
+          e 24px alinhados ao grid de 4px.</span></h3>
 
       <div class="icon-text-row">
         <div class="icon-text-demo">
-          <span class="material-symbols-rounded" style="font-size: 20px; color: var(--ume-verde-claro);" aria-hidden="true">check_circle</span>
+          <span class="material-symbols-rounded" style="font-size: 20px; color: var(--ume-verde-claro);"
+            aria-hidden="true">check_circle</span>
           <span style="font-size: 16px; line-height: 24px;">Body 16px + ícone 20px</span>
           <span class="type-grid-badge">24px line</span>
         </div>
         <div class="icon-text-demo">
-          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-roxo);" aria-hidden="true">trending_up</span>
+          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-roxo);"
+            aria-hidden="true">trending_up</span>
           <span style="font-size: 18px; line-height: 28px;">Body LG 18px + ícone 24px</span>
           <span class="type-grid-badge">28px line</span>
         </div>
         <div class="icon-text-demo">
-          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-verde-medio);" aria-hidden="true">dashboard</span>
-          <span style="font-size: 20px; line-height: 28px; font-family: var(--font-display); font-weight: 500;">H4 20px + ícone 24px</span>
+          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-verde-medio);"
+            aria-hidden="true">dashboard</span>
+          <span style="font-size: 20px; line-height: 28px; font-family: var(--font-display); font-weight: 500;">H4 20px
+            + ícone 24px</span>
           <span class="type-grid-badge">28px line</span>
         </div>
         <div class="icon-text-demo">
-          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-verde-escuro);" aria-hidden="true">rocket_launch</span>
-          <span style="font-size: 24px; line-height: 32px; font-family: var(--font-display); font-weight: 500;">H3 24px + ícone 24px</span>
+          <span class="material-symbols-rounded" style="font-size: 24px; color: var(--ume-verde-escuro);"
+            aria-hidden="true">rocket_launch</span>
+          <span style="font-size: 24px; line-height: 32px; font-family: var(--font-display); font-weight: 500;">H3 24px
+            + ícone 24px</span>
           <span class="type-grid-badge">32px line</span>
         </div>
       </div>
 
       <!-- Font Performance -->
-      <div style="margin-top: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Desempenho Tipográfico</h3>
-        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; max-width: 65ch;">Estratégias de carregamento para garantir tempo de renderização rápido sem flash de texto invisível (FOIT).</p>
-      </div>
+      <h3 class="sub-header" style="margin-top: 48px;">Desempenho Tipográfico <span class="sub-desc">— Estratégias de
+          carregamento para renderização rápida sem FOIT.</span></h3>
 
       <div class="perf-card">
         <div class="perf-grid">
           <div class="perf-item">
-            <h5><span class="material-symbols-rounded" style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);" aria-hidden="true">bolt</span> font-display: swap</h5>
-            <p>Todas as declarações <code>@font-face</code> usam <code>font-display: swap</code>. O texto aparece imediatamente com a fonte fallback e troca suavemente quando a fonte customizada carrega.</p>
+            <h5><span class="material-symbols-rounded"
+                style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);"
+                aria-hidden="true">bolt</span> font-display: swap</h5>
+            <p>Todas as declarações <code>@font-face</code> usam <code>font-display: swap</code>. O texto aparece
+              imediatamente com a fonte fallback e troca suavemente quando a fonte customizada carrega.</p>
           </div>
           <div class="perf-item">
-            <h5><span class="material-symbols-rounded" style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);" aria-hidden="true">download</span> Preload de fontes críticas</h5>
-            <p>As duas fontes mais usadas são pré-carregadas via <code>&lt;link rel="preload"&gt;</code>:<br><code>aeonik-regular.otf</code> (body) e <code>aeonikfono-medium.otf</code> (headings).</p>
+            <h5><span class="material-symbols-rounded"
+                style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);"
+                aria-hidden="true">download</span> Preload de fontes críticas</h5>
+            <p>As duas fontes mais usadas são pré-carregadas via
+              <code>&lt;link rel="preload"&gt;</code>:<br><code>aeonik-regular.otf</code> (body) e
+              <code>aeonikfono-medium.otf</code> (headings).
+            </p>
           </div>
           <div class="perf-item">
-            <h5><span class="material-symbols-rounded" style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);" aria-hidden="true">swap_horiz</span> Fallback stack</h5>
-            <p>Stack de fallback: <code>'Helvetica Neue' → Arial → sans-serif</code>. Métricas similares à Aeonik, minimizando layout shift (CLS) na troca de fontes.</p>
+            <h5><span class="material-symbols-rounded"
+                style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);"
+                aria-hidden="true">swap_horiz</span> Fallback stack</h5>
+            <p>Stack de fallback: <code>'Helvetica Neue' → Arial → sans-serif</code>. Métricas similares à Aeonik,
+              minimizando layout shift (CLS) na troca de fontes.</p>
           </div>
           <div class="perf-item">
-            <h5><span class="material-symbols-rounded" style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);" aria-hidden="true">text_format</span> Subsets</h5>
-            <p>Incluir apenas os character subsets necessários: <code>latin</code> e <code>latin-ext</code> para suporte completo ao Português (acentos, ç, etc).</p>
+            <h5><span class="material-symbols-rounded"
+                style="font-size: 16px; vertical-align: text-bottom; margin-right: 4px; color: var(--ume-verde-claro);"
+                aria-hidden="true">text_format</span> Subsets</h5>
+            <p>Incluir apenas os character subsets necessários: <code>latin</code> e <code>latin-ext</code> para suporte
+              completo ao Português (acentos, ç, etc).</p>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ UNITS & SPACING ═══ -->
     <section id="espacamento">
       <div class="section-header">
         <div class="overline">Units & Spacing</div>
         <h2>Unidade Base e Espaçamento</h2>
-        <p>Sistema de 4 pontos. Todos os valores de espaçamento, sizing e layout derivam da unidade base de 4px. Isso garante ritmo visual consistente e alinhamento preciso em qualquer escala.</p>
+        <p>Sistema de 4 pontos — todos os valores derivam da unidade base de 4px.</p>
       </div>
 
       <!-- Base unit callout -->
-      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px; padding: 20px; background: var(--surface-raised); border-radius: 12px; border: 1px solid var(--border-default);">
-        <div style="width: 48px; height: 48px; background: var(--ume-verde-claro); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--ume-cinza-escuro);">4</div>
+      <div
+        style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px; padding: 20px; background: var(--surface-raised); border-radius: 12px; border: 1px solid var(--border-default);">
+        <div
+          style="width: 48px; height: 48px; background: var(--ume-verde-claro); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--ume-cinza-escuro);">
+          4</div>
         <div>
           <div style="font-weight: 500; margin-bottom: 2px;">Unidade base = 4px</div>
-          <div style="font-size: 13px; color: var(--text-secondary);">1u = 4px · 2u = 8px · 4u = 16px · 6u = 24px · 8u = 32px</div>
+          <div style="font-size: 13px; color: var(--text-secondary);">1u = 4px · 2u = 8px · 4u = 16px · 6u = 24px · 8u =
+            32px</div>
         </div>
       </div>
 
       <!-- Spacing scale -->
       <div class="spacing-grid">
-        <div class="spacing-block"><div class="bar" style="height: 2px;"></div><div class="label">0.5</div><div class="value">2px</div><div class="unit-val">½u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 4px;"></div><div class="label">1</div><div class="value">4px</div><div class="unit-val">1u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 6px;"></div><div class="label">1.5</div><div class="value">6px</div><div class="unit-val">1.5u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 8px;"></div><div class="label">2</div><div class="value">8px</div><div class="unit-val">2u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 10px;"></div><div class="label">2.5</div><div class="value">10px</div><div class="unit-val">2.5u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 12px;"></div><div class="label">3</div><div class="value">12px</div><div class="unit-val">3u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 16px;"></div><div class="label">4</div><div class="value">16px</div><div class="unit-val">4u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 20px;"></div><div class="label">5</div><div class="value">20px</div><div class="unit-val">5u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 24px;"></div><div class="label">6</div><div class="value">24px</div><div class="unit-val">6u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 32px;"></div><div class="label">8</div><div class="value">32px</div><div class="unit-val">8u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 40px;"></div><div class="label">10</div><div class="value">40px</div><div class="unit-val">10u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 48px;"></div><div class="label">12</div><div class="value">48px</div><div class="unit-val">12u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 64px;"></div><div class="label">16</div><div class="value">64px</div><div class="unit-val">16u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 80px;"></div><div class="label">20</div><div class="value">80px</div><div class="unit-val">20u</div></div>
-        <div class="spacing-block"><div class="bar" style="height: 96px;"></div><div class="label">24</div><div class="value">96px</div><div class="unit-val">24u</div></div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 2px;"></div>
+          <div class="label">0.5</div>
+          <div class="value">2px</div>
+          <div class="unit-val">½u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 4px;"></div>
+          <div class="label">1</div>
+          <div class="value">4px</div>
+          <div class="unit-val">1u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 6px;"></div>
+          <div class="label">1.5</div>
+          <div class="value">6px</div>
+          <div class="unit-val">1.5u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 8px;"></div>
+          <div class="label">2</div>
+          <div class="value">8px</div>
+          <div class="unit-val">2u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 10px;"></div>
+          <div class="label">2.5</div>
+          <div class="value">10px</div>
+          <div class="unit-val">2.5u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 12px;"></div>
+          <div class="label">3</div>
+          <div class="value">12px</div>
+          <div class="unit-val">3u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 16px;"></div>
+          <div class="label">4</div>
+          <div class="value">16px</div>
+          <div class="unit-val">4u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 20px;"></div>
+          <div class="label">5</div>
+          <div class="value">20px</div>
+          <div class="unit-val">5u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 24px;"></div>
+          <div class="label">6</div>
+          <div class="value">24px</div>
+          <div class="unit-val">6u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 32px;"></div>
+          <div class="label">8</div>
+          <div class="value">32px</div>
+          <div class="unit-val">8u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 40px;"></div>
+          <div class="label">10</div>
+          <div class="value">40px</div>
+          <div class="unit-val">10u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 48px;"></div>
+          <div class="label">12</div>
+          <div class="value">48px</div>
+          <div class="unit-val">12u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 64px;"></div>
+          <div class="label">16</div>
+          <div class="value">64px</div>
+          <div class="unit-val">16u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 80px;"></div>
+          <div class="label">20</div>
+          <div class="value">80px</div>
+          <div class="unit-val">20u</div>
+        </div>
+        <div class="spacing-block">
+          <div class="bar" style="height: 96px;"></div>
+          <div class="label">24</div>
+          <div class="value">96px</div>
+          <div class="unit-val">24u</div>
+        </div>
       </div>
 
       <!-- Semantic spacing usage -->
       <table class="usage-table">
         <thead>
-          <tr><th>Alias</th><th>Valor</th><th>Uso</th><th>Tailwind</th></tr>
+          <tr>
+            <th>Alias</th>
+            <th>Valor</th>
+            <th>Uso</th>
+            <th>Tailwind</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td style="font-weight:500;">inline</td><td>8px (2u)</td><td>Entre elementos inline (botões, badges, ícones)</td><td><code>gap-2</code></td></tr>
-          <tr><td style="font-weight:500;">stack</td><td>16px (4u)</td><td>Entre elementos empilhados (campos de form, itens de lista)</td><td><code>gap-4</code> <code>space-y-4</code></td></tr>
-          <tr><td style="font-weight:500;">group</td><td>24px (6u)</td><td>Entre grupos de conteúdo relacionado</td><td><code>gap-6</code></td></tr>
-          <tr><td style="font-weight:500;">section</td><td>64px (16u)</td><td>Entre seções principais da página</td><td><code>gap-16</code> <code>py-16</code></td></tr>
-          <tr><td style="font-weight:500;">page-x</td><td>32px (8u)</td><td>Padding horizontal padrão da página</td><td><code>px-8</code></td></tr>
-          <tr><td style="font-weight:500;">page-y</td><td>48px (12u)</td><td>Padding vertical padrão da página</td><td><code>py-12</code></td></tr>
+          <tr>
+            <td style="font-weight:500;">inline</td>
+            <td>8px (2u)</td>
+            <td>Entre elementos inline (botões, badges, ícones)</td>
+            <td><code>gap-2</code></td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">stack</td>
+            <td>16px (4u)</td>
+            <td>Entre elementos empilhados (campos de form, itens de lista)</td>
+            <td><code>gap-4</code> <code>space-y-4</code></td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">group</td>
+            <td>24px (6u)</td>
+            <td>Entre grupos de conteúdo relacionado</td>
+            <td><code>gap-6</code></td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">section</td>
+            <td>64px (16u)</td>
+            <td>Entre seções principais da página</td>
+            <td><code>gap-16</code> <code>py-16</code></td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">page-x</td>
+            <td>32px (8u)</td>
+            <td>Padding horizontal padrão da página</td>
+            <td><code>px-8</code></td>
+          </tr>
+          <tr>
+            <td style="font-weight:500;">page-y</td>
+            <td>48px (12u)</td>
+            <td>Padding vertical padrão da página</td>
+            <td><code>py-12</code></td>
+          </tr>
         </tbody>
       </table>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ GRID ═══ -->
     <section id="grid">
       <div class="section-header">
         <div class="overline">Grid</div>
         <h2>Sistema de Grid</h2>
-        <p>Grid responsivo com colunas, gutters e margens que se adaptam a cada breakpoint. O grid traz ordem e hierarquia para o layout.</p>
+        <p>Colunas, gutters e margens que se adaptam a cada breakpoint.</p>
       </div>
 
       <!-- Mobile grid -->
@@ -878,14 +2926,16 @@
         </div>
         <div class="grid-demo-body" style="max-width: 390px; margin: 0 auto;">
           <div style="display: flex; gap: 0;">
-            <div class="grid-margin-indicator" style="width: 16px; display: flex; align-items: center; justify-content: center; font-size: 9px;">16</div>
+            <div class="grid-margin-indicator"
+              style="width: 16px; display: flex; align-items: center; justify-content: center; font-size: 9px;">16</div>
             <div style="flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
               <div class="grid-col">1</div>
               <div class="grid-col">2</div>
               <div class="grid-col">3</div>
               <div class="grid-col">4</div>
             </div>
-            <div class="grid-margin-indicator" style="width: 16px; display: flex; align-items: center; justify-content: center; font-size: 9px;">16</div>
+            <div class="grid-margin-indicator"
+              style="width: 16px; display: flex; align-items: center; justify-content: center; font-size: 9px;">16</div>
           </div>
           <div class="grid-gutter-label">← 16px gutter →</div>
         </div>
@@ -899,7 +2949,8 @@
         </div>
         <div class="grid-demo-body">
           <div style="display: flex; gap: 0;">
-            <div class="grid-margin-indicator" style="width: 32px; display: flex; align-items: center; justify-content: center; font-size: 9px;">32</div>
+            <div class="grid-margin-indicator"
+              style="width: 32px; display: flex; align-items: center; justify-content: center; font-size: 9px;">32</div>
             <div style="flex: 1; display: grid; grid-template-columns: repeat(8, 1fr); gap: 24px;">
               <div class="grid-col">1</div>
               <div class="grid-col">2</div>
@@ -910,7 +2961,8 @@
               <div class="grid-col">7</div>
               <div class="grid-col">8</div>
             </div>
-            <div class="grid-margin-indicator" style="width: 32px; display: flex; align-items: center; justify-content: center; font-size: 9px;">32</div>
+            <div class="grid-margin-indicator"
+              style="width: 32px; display: flex; align-items: center; justify-content: center; font-size: 9px;">32</div>
           </div>
           <div class="grid-gutter-label">← 24px gutter →</div>
         </div>
@@ -945,66 +2997,97 @@
       <div style="margin-top: 24px;">
         <div style="font-weight: 500; margin-bottom: 16px; font-size: 14px;">Layouts comuns no grid de 12 colunas</div>
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-bottom: 12px;">
-          <div style="grid-column: span 12; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">12 — Full width</div>
+          <div
+            style="grid-column: span 12; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            12 — Full width</div>
         </div>
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-bottom: 12px;">
-          <div style="grid-column: span 8; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">8 — Conteúdo</div>
-          <div style="grid-column: span 4; background: rgba(151,74,253,0.06); border: 1px solid rgba(151,74,253,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">4 — Sidebar</div>
+          <div
+            style="grid-column: span 8; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            8 — Conteúdo</div>
+          <div
+            style="grid-column: span 4; background: rgba(151,74,253,0.06); border: 1px solid rgba(151,74,253,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            4 — Sidebar</div>
         </div>
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-bottom: 12px;">
-          <div style="grid-column: span 6; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">6 — Metade</div>
-          <div style="grid-column: span 6; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">6 — Metade</div>
+          <div
+            style="grid-column: span 6; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            6 — Metade</div>
+          <div
+            style="grid-column: span 6; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            6 — Metade</div>
         </div>
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px;">
-          <div style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">4 — Terço</div>
-          <div style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">4 — Terço</div>
-          <div style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">4 — Terço</div>
+          <div
+            style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            4 — Terço</div>
+          <div
+            style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            4 — Terço</div>
+          <div
+            style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
+            4 — Terço</div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ BREAKPOINTS ═══ -->
     <section id="breakpoints">
       <div class="section-header">
         <div class="overline">Breakpoints</div>
         <h2>Pontos de Quebra Responsivos</h2>
-        <p>Mobile-first: estilos são aplicados a partir de cada breakpoint para cima. Definem quando o grid, espaçamento e layout se adaptam.</p>
+        <p>Mobile-first — estilos aplicados a partir de cada breakpoint para cima.</p>
       </div>
-      <div style="background: var(--surface-raised); border-radius: 16px; padding: 24px 32px; border: 1px solid var(--border-default);">
+      <div
+        style="background: var(--surface-raised); border-radius: 16px; padding: 24px 32px; border: 1px solid var(--border-default);">
         <div class="bp-row">
           <div class="bp-name">xs</div>
           <div class="bp-value">0px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 3%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 3%;"></div>
+          </div>
           <div class="bp-desc">Phones (portrait) — 4 colunas, padding 16px</div>
         </div>
         <div class="bp-row">
           <div class="bp-name">sm</div>
           <div class="bp-value">640px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 22%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 22%;"></div>
+          </div>
           <div class="bp-desc">Phones (landscape), small tablets</div>
         </div>
         <div class="bp-row">
           <div class="bp-name">md</div>
           <div class="bp-value">768px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 32%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 32%;"></div>
+          </div>
           <div class="bp-desc">Tablets (portrait) — 8 colunas, gutter 24px</div>
         </div>
         <div class="bp-row">
           <div class="bp-name">lg</div>
           <div class="bp-value">1024px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 50%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 50%;"></div>
+          </div>
           <div class="bp-desc">Tablets (landscape), laptops — 12 colunas, sidebar visível</div>
         </div>
         <div class="bp-row">
           <div class="bp-name">xl</div>
           <div class="bp-value">1280px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 72%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 72%;"></div>
+          </div>
           <div class="bp-desc">Desktops — container max 1200px, gutter 24px</div>
         </div>
         <div class="bp-row">
           <div class="bp-name">2xl</div>
           <div class="bp-value">1536px</div>
-          <div class="bp-bar-wrap"><div class="bp-bar" style="width: 100%;"></div></div>
+          <div class="bp-bar-wrap">
+            <div class="bp-bar" style="width: 100%;"></div>
+          </div>
           <div class="bp-desc">Wide — container max 1400px, gutter 32px</div>
         </div>
       </div>
@@ -1012,18 +3095,62 @@
       <!-- Behavior table -->
       <table class="usage-table" style="margin-top: 24px;">
         <thead>
-          <tr><th>Breakpoint</th><th>Colunas</th><th>Gutter</th><th>Margem</th><th>Container</th></tr>
+          <tr>
+            <th>Breakpoint</th>
+            <th>Colunas</th>
+            <th>Gutter</th>
+            <th>Margem</th>
+            <th>Container</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td><code>xs</code> 0px</td><td>4</td><td>16px (4u)</td><td>16px (4u)</td><td>100%</td></tr>
-          <tr><td><code>sm</code> 640px</td><td>4</td><td>16px (4u)</td><td>24px (6u)</td><td>100%</td></tr>
-          <tr><td><code>md</code> 768px</td><td>8</td><td>24px (6u)</td><td>32px (8u)</td><td>100%</td></tr>
-          <tr><td><code>lg</code> 1024px</td><td>12</td><td>24px (6u)</td><td>64px (16u)</td><td>1200px</td></tr>
-          <tr><td><code>xl</code> 1280px</td><td>12</td><td>24px (6u)</td><td>auto</td><td>1200px</td></tr>
-          <tr><td><code>2xl</code> 1536px</td><td>12</td><td>32px (8u)</td><td>auto</td><td>1400px</td></tr>
+          <tr>
+            <td><code>xs</code> 0px</td>
+            <td>4</td>
+            <td>16px (4u)</td>
+            <td>16px (4u)</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td><code>sm</code> 640px</td>
+            <td>4</td>
+            <td>16px (4u)</td>
+            <td>24px (6u)</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td><code>md</code> 768px</td>
+            <td>8</td>
+            <td>24px (6u)</td>
+            <td>32px (8u)</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td><code>lg</code> 1024px</td>
+            <td>12</td>
+            <td>24px (6u)</td>
+            <td>64px (16u)</td>
+            <td>1200px</td>
+          </tr>
+          <tr>
+            <td><code>xl</code> 1280px</td>
+            <td>12</td>
+            <td>24px (6u)</td>
+            <td>auto</td>
+            <td>1200px</td>
+          </tr>
+          <tr>
+            <td><code>2xl</code> 1536px</td>
+            <td>12</td>
+            <td>32px (8u)</td>
+            <td>auto</td>
+            <td>1400px</td>
+          </tr>
         </tbody>
       </table>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ BORDER RADIUS ═══ -->
     <section id="border-radius">
@@ -1032,32 +3159,60 @@
         <h2>Cantos Arredondados</h2>
       </div>
       <div class="radius-grid">
-        <div class="radius-block"><div class="shape" style="border-radius: 0;"></div><div class="label">none</div><div class="value">0px</div></div>
-        <div class="radius-block"><div class="shape" style="border-radius: 4px;"></div><div class="label">sm</div><div class="value">4px</div></div>
-        <div class="radius-block"><div class="shape" style="border-radius: 8px;"></div><div class="label">md</div><div class="value">8px</div></div>
-        <div class="radius-block"><div class="shape" style="border-radius: 12px;"></div><div class="label">lg (--radius)</div><div class="value">12px</div></div>
-        <div class="radius-block"><div class="shape" style="border-radius: 16px;"></div><div class="label">xl</div><div class="value">16px</div></div>
-        <div class="radius-block"><div class="shape" style="border-radius: 9999px;"></div><div class="label">full</div><div class="value">9999px</div></div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 0;"></div>
+          <div class="label">none</div>
+          <div class="value">0px</div>
+        </div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 4px;"></div>
+          <div class="label">sm</div>
+          <div class="value">4px</div>
+        </div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 8px;"></div>
+          <div class="label">md</div>
+          <div class="value">8px</div>
+        </div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 12px;"></div>
+          <div class="label">lg (--radius)</div>
+          <div class="value">12px</div>
+        </div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 16px;"></div>
+          <div class="label">xl</div>
+          <div class="value">16px</div>
+        </div>
+        <div class="radius-block">
+          <div class="shape" style="border-radius: 9999px;"></div>
+          <div class="label">full</div>
+          <div class="value">9999px</div>
+        </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ ELEVATION ═══ -->
     <section id="elevacao">
       <div class="section-header">
         <div class="overline">Elevation</div>
         <h2>Sistema de Elevação</h2>
-        <p>5 níveis de elevação que combinam sombra, cor de fundo e borda para comunicar profundidade. No modo escuro, superfícies mais claras substituem sombras como indicador principal de profundidade.</p>
+        <p>5 níveis que combinam sombra, fundo e borda — no escuro, claridade substitui sombra.</p>
       </div>
 
       <!-- Elevation Levels (Light Mode) -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 16px;">Sombras por Nível</h3>
+      <h3 class="sub-header">Sombras por Nível</h3>
       <div class="elevation-grid">
-        <div class="elevation-card" style="background: var(--surface-page); border: 1px solid var(--border-default); box-shadow: none;">
+        <div class="elevation-card"
+          style="background: var(--surface-page); border: 1px solid var(--border-default); box-shadow: none;">
           <div class="level">0</div>
           <div class="level-name">Ground</div>
           <div class="level-usage">Fundo da página, linhas de tabela, painéis recessos</div>
         </div>
-        <div class="elevation-card" style="background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border-default);">
+        <div class="elevation-card"
+          style="background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border-default);">
           <div class="level">1</div>
           <div class="level-name">Resting</div>
           <div class="level-usage">Cards, itens de lista, sidebar, barra inferior</div>
@@ -1080,8 +3235,8 @@
       </div>
 
       <!-- Dark Mode Surfaces -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Superfícies no Dark Mode</h3>
-      <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; max-width: 65ch;">No modo escuro, sombras são pouco visíveis. A elevação é comunicada pela claridade progressiva da superfície — quanto mais alta, mais clara.</p>
+      <h3 class="sub-header">Superfícies no Dark Mode <span class="sub-desc">— No escuro, a elevação é comunicada pela
+          claridade progressiva da superfície.</span></h3>
       <div class="surface-demo">
         <div class="surface-chip" style="background: #0F0F0F; color: #F2F2F2; border-color: #2D2D2D;">
           <div class="chip-level">Level 0</div>
@@ -1106,190 +3261,269 @@
       </div>
 
       <!-- Brand Glows (keep existing) -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 16px;">Brand Glows</h3>
+      <h3 class="sub-header">Brand Glows</h3>
       <div class="glow-showcase">
-        <div class="glow-card glow-green"><h4>Green Glow</h4><p>Cards de destaque, métricas positivas</p><code>box-shadow: 0 0 20px rgba(9,207,124,0.15)</code></div>
-        <div class="glow-card glow-green-strong"><h4>Green Glow Strong</h4><p>CTA principal, hero moments</p><code>box-shadow: 0 0 30px rgba(9,207,124,0.25)</code></div>
-        <div class="glow-card glow-purple"><h4>Purple Glow</h4><p>Links em destaque, estados de foco</p><code>box-shadow: 0 0 20px rgba(151,74,253,0.15)</code></div>
+        <div class="glow-card glow-green">
+          <h4>Green Glow</h4>
+          <p>Cards de destaque, métricas positivas</p><code>box-shadow: 0 0 20px rgba(9,207,124,0.15)</code>
+        </div>
+        <div class="glow-card glow-green-strong">
+          <h4>Green Glow Strong</h4>
+          <p>CTA principal, hero moments</p><code>box-shadow: 0 0 30px rgba(9,207,124,0.25)</code>
+        </div>
+        <div class="glow-card glow-purple">
+          <h4>Purple Glow</h4>
+          <p>Links em destaque, estados de foco</p><code>box-shadow: 0 0 20px rgba(151,74,253,0.15)</code>
+        </div>
       </div>
 
       <!-- Z-Index Scale -->
       <div style="margin-top: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Z-Index</h3>
-        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; max-width: 65ch;">Escala semântica de z-index para controlar a prioridade de renderização. Espaçamento de 100 entre níveis permite valores intermediários quando necessário.</p>
+        <h3 class="sub-header">Z-Index <span class="sub-desc">— Escala semântica com espaçamento de 100 entre
+            níveis.</span></h3>
       </div>
 
       <table class="zindex-table">
         <thead>
-          <tr><th style="width: 140px;">Token</th><th style="width: 80px;">Valor</th><th>Uso</th><th style="width: 160px;">Tailwind</th><th style="width: 120px;">Escala</th></tr>
+          <tr>
+            <th style="width: 140px;">Token</th>
+            <th style="width: 80px;">Valor</th>
+            <th>Uso</th>
+            <th style="width: 160px;">Tailwind</th>
+            <th style="width: 120px;">Escala</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <td><code>z-base</code></td><td>0</td>
+            <td><code>z-base</code></td>
+            <td>0</td>
             <td>Conteúdo da página, contexto padrão</td>
             <td><code>z-base</code></td>
-            <td><div class="zindex-bar" style="width: 2%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 2%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-dropdown</code></td><td>100</td>
+            <td><code>z-dropdown</code></td>
+            <td>100</td>
             <td>Dropdowns, select menus, autocomplete</td>
             <td><code>z-dropdown</code></td>
-            <td><div class="zindex-bar" style="width: 10%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 10%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-sticky</code></td><td>200</td>
+            <td><code>z-sticky</code></td>
+            <td>200</td>
             <td>Headers fixos, cabeçalhos de tabela sticky</td>
             <td><code>z-sticky</code></td>
-            <td><div class="zindex-bar" style="width: 20%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 20%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-fixed</code></td><td>300</td>
+            <td><code>z-fixed</code></td>
+            <td>300</td>
             <td>Navegação fixa, FABs</td>
             <td><code>z-fixed</code></td>
-            <td><div class="zindex-bar" style="width: 30%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 30%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-drawer</code></td><td>400</td>
+            <td><code>z-drawer</code></td>
+            <td>400</td>
             <td>Side drawers, painéis deslizantes</td>
             <td><code>z-drawer</code></td>
-            <td><div class="zindex-bar" style="width: 40%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 40%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-modal-backdrop</code></td><td>500</td>
+            <td><code>z-modal-backdrop</code></td>
+            <td>500</td>
             <td>Overlay/backdrop atrás de modais</td>
             <td><code>z-modal-backdrop</code></td>
-            <td><div class="zindex-bar" style="width: 50%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 50%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-modal</code></td><td>600</td>
+            <td><code>z-modal</code></td>
+            <td>600</td>
             <td>Modais, dialogs, sheets</td>
             <td><code>z-modal</code></td>
-            <td><div class="zindex-bar" style="width: 60%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 60%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-popover</code></td><td>700</td>
+            <td><code>z-popover</code></td>
+            <td>700</td>
             <td>Popovers e tooltips acima de modais</td>
             <td><code>z-popover</code></td>
-            <td><div class="zindex-bar" style="width: 70%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 70%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-toast</code></td><td>800</td>
+            <td><code>z-toast</code></td>
+            <td>800</td>
             <td>Toast notifications — sempre visível</td>
             <td><code>z-toast</code></td>
-            <td><div class="zindex-bar" style="width: 80%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 80%;"></div>
+            </td>
           </tr>
           <tr>
-            <td><code>z-max</code></td><td>9999</td>
+            <td><code>z-max</code></td>
+            <td>9999</td>
             <td>Escape hatch — dev tools, theme toggle</td>
             <td><code>z-max</code></td>
-            <td><div class="zindex-bar" style="width: 100%;"></div></td>
+            <td>
+              <div class="zindex-bar" style="width: 100%;"></div>
+            </td>
           </tr>
         </tbody>
       </table>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ MOTION ═══ -->
     <section id="motion">
       <div class="section-header">
         <div class="overline">Motion</div>
         <h2>Animação e Progressão</h2>
-        <p>"Progressão visual que comunica crescimento e transformação" — traduzida em easing, duração e padrões de motion consistentes.</p>
+        <p>Progressão visual traduzida em easing, duração e padrões de motion.</p>
       </div>
 
       <!-- Easing Functions -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Easing</h3>
-      <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; max-width: 65ch;">Curvas de easing que definem o caráter do movimento. Passe o mouse sobre cada card para ver a curva em ação.</p>
+      <h3 class="sub-header">Easing <span class="sub-desc">— Curvas que definem o caráter do movimento. Hover para ver
+          em ação.</span></h3>
 
       <div class="easing-grid">
         <div class="easing-card">
           <h5>Standard</h5>
           <div class="easing-value">cubic-bezier(0.2, 0, 0, 1)</div>
-          <div class="easing-desc">Desaceleração natural. Padrão para a maioria das transições de UI — hover, show/hide, troca de estado.</div>
-          <div class="easing-track"><div class="easing-dot"></div></div>
+          <div class="easing-desc">Desaceleração natural. Padrão para a maioria das transições de UI — hover, show/hide,
+            troca de estado.</div>
+          <div class="easing-track">
+            <div class="easing-dot"></div>
+          </div>
         </div>
         <div class="easing-card">
           <h5>Accelerate</h5>
           <div class="easing-value">cubic-bezier(0.3, 0, 0.8, 0.15)</div>
           <div class="easing-desc">Saída — elemento deixando a tela. Acelera conforme se afasta.</div>
-          <div class="easing-track"><div class="easing-dot"></div></div>
+          <div class="easing-track">
+            <div class="easing-dot"></div>
+          </div>
         </div>
         <div class="easing-card">
           <h5>Decelerate</h5>
           <div class="easing-value">cubic-bezier(0.05, 0.7, 0.1, 1)</div>
           <div class="easing-desc">Entrada — elemento surgindo na tela. Começa rápido, pousa suavemente.</div>
-          <div class="easing-track"><div class="easing-dot"></div></div>
+          <div class="easing-track">
+            <div class="easing-dot"></div>
+          </div>
         </div>
         <div class="easing-card">
           <h5>Emphasis</h5>
           <div class="easing-value">cubic-bezier(0.2, 0, 0, 1.4)</div>
-          <div class="easing-desc">Overshoot — ênfase lúdica para momentos de marca. Use com moderação (toggles, celebrações).</div>
-          <div class="easing-track"><div class="easing-dot"></div></div>
+          <div class="easing-desc">Overshoot — ênfase lúdica para momentos de marca. Use com moderação (toggles,
+            celebrações).</div>
+          <div class="easing-track">
+            <div class="easing-dot"></div>
+          </div>
         </div>
         <div class="easing-card">
           <h5>Linear</h5>
           <div class="easing-value">linear</div>
-          <div class="easing-desc">Velocidade constante — apenas para animações contínuas (progress bars, spinners, shimmer).</div>
-          <div class="easing-track"><div class="easing-dot"></div></div>
+          <div class="easing-desc">Velocidade constante — apenas para animações contínuas (progress bars, spinners,
+            shimmer).</div>
+          <div class="easing-track">
+            <div class="easing-dot"></div>
+          </div>
         </div>
       </div>
 
       <!-- Duration Scale -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Duração</h3>
-      <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; max-width: 65ch;">Escolha a menor duração que pareça intencional mas não lenta. Micro-interações são rápidas; transições de layout são consideradas.</p>
+      <h3 class="sub-header">Duração <span class="sub-desc">— A menor duração que pareça intencional. Micro-interações
+          rápidas, transições de layout consideradas.</span></h3>
 
       <div class="duration-grid">
         <div class="duration-row">
           <div class="duration-name">instant</div>
           <div class="duration-value">0ms</div>
           <div class="duration-desc">Estado imediato — cor no press</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 0%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 0%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">fastest</div>
           <div class="duration-value">100ms</div>
           <div class="duration-desc">Micro — opacity, cor, ícone</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 14%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 14%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">fast</div>
           <div class="duration-value">200ms</div>
           <div class="duration-desc">Quick — hover, toggle, tooltip</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 28%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 28%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">normal</div>
           <div class="duration-value">300ms</div>
           <div class="duration-desc">Padrão — dropdown, accordion, tab</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 43%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 43%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">slow</div>
           <div class="duration-value">400ms</div>
           <div class="duration-desc">Considerado — modal enter, grow</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 57%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 57%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">slower</div>
           <div class="duration-value">500ms</div>
           <div class="duration-desc">Deliberado — stagger, layout shift</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 71%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 71%;"></div>
+          </div>
         </div>
         <div class="duration-row">
           <div class="duration-name">slowest</div>
           <div class="duration-value">700ms</div>
           <div class="duration-desc">Marca — onboarding, celebração</div>
-          <div class="duration-bar-track"><div class="duration-bar-fill" style="width: 100%;"></div></div>
+          <div class="duration-bar-track">
+            <div class="duration-bar-fill" style="width: 100%;"></div>
+          </div>
         </div>
       </div>
 
       <!-- Brand Animations (existing, preserved) -->
-      <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 16px;">Padrões de Marca</h3>
+      <h3 class="sub-header">Padrões de Marca</h3>
       <div class="motion-showcase">
         <div class="motion-card">
           <h4>Progressive Stagger</h4>
-          <p>Itens surgem em sequência com delay de 80ms. Easing: decelerate. Traduz a progressão diagonal do grafismo.</p>
+          <p>Itens surgem em sequência com delay de 80ms. Easing: decelerate. Traduz a progressão diagonal do grafismo.
+          </p>
           <div class="motion-demo stagger-demo">
-            <div class="motion-dot"></div><div class="motion-dot"></div><div class="motion-dot"></div><div class="motion-dot"></div><div class="motion-dot"></div>
+            <div class="motion-dot"></div>
+            <div class="motion-dot"></div>
+            <div class="motion-dot"></div>
+            <div class="motion-dot"></div>
+            <div class="motion-dot"></div>
           </div>
         </div>
         <div class="motion-card">
@@ -1312,39 +3546,49 @@
 
       <!-- Accessibility -->
       <div style="margin-top: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px;">Acessibilidade de Motion</h3>
-        <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; max-width: 65ch;">Quando o usuário ativa <code>prefers-reduced-motion: reduce</code>, respeitamos a preferência completamente. O sistema desativa animações automaticamente via CSS.</p>
+        <h3 class="sub-header">Acessibilidade de Motion <span class="sub-desc">— Respeito total a
+            <code>prefers-reduced-motion: reduce</code>.</span></h3>
       </div>
 
       <div class="a11y-motion-card">
-        <h4 style="font-family: var(--font-display); font-size: 16px; font-weight: 500; margin-bottom: 16px;">Regras de Reduced Motion</h4>
+        <h4 class="sub-header" style="font-size: 16px;">Regras de Reduced Motion</h4>
         <div class="a11y-motion-grid">
           <div class="a11y-rule a11y-do">
             <h5>Manter</h5>
-            <p>Transições de cor e opacidade (reduzidas a 0.01ms). Mudanças de estado visuais sem movimento. Scroll behavior normal (auto).</p>
+            <p>Transições de cor e opacidade (reduzidas a 0.01ms). Mudanças de estado visuais sem movimento. Scroll
+              behavior normal (auto).</p>
           </div>
           <div class="a11y-rule a11y-dont">
             <h5>Remover</h5>
-            <p>Transform-based (translate, scale, rotate). Animações infinitas/looping (shimmer, gradient-flow). Stagger delays. Scroll-behavior: smooth.</p>
+            <p>Transform-based (translate, scale, rotate). Animações infinitas/looping (shimmer, gradient-flow). Stagger
+              delays. Scroll-behavior: smooth.</p>
           </div>
           <div class="a11y-rule a11y-do">
             <h5>CSS automático</h5>
-            <p><code>@media (prefers-reduced-motion: reduce)</code> zera todas as durações de animation e transition para 0.01ms, garante iteration-count: 1, e reseta scroll-behavior.</p>
+            <p><code>@media (prefers-reduced-motion: reduce)</code> zera todas as durações de animation e transition
+              para 0.01ms, garante iteration-count: 1, e reseta scroll-behavior.</p>
           </div>
           <div class="a11y-rule a11y-do">
             <h5>Variáveis zeradas</h5>
-            <p>Todas as variáveis <code>--duration-*</code> e <code>--transition-*</code> são setadas para <code>0ms</code> / <code>none</code> em reduced-motion, garantindo que componentes que usam os tokens também se adaptem.</p>
+            <p>Todas as variáveis <code>--duration-*</code> e <code>--transition-*</code> são setadas para
+              <code>0ms</code> / <code>none</code> em reduced-motion, garantindo que componentes que usam os tokens
+              também se adaptem.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- ═══ ICONS ═══ -->
     <section id="iconografia">
       <div class="section-header">
         <div class="overline">Iconography</div>
         <h2>Material Symbols — Rounded</h2>
-        <p>Google Material Symbols, estilo Rounded. wght:400, GRAD:0, FILL:0, opsz:24.</p>
+        <p>Google Material Symbols, estilo Rounded, peso 400. <a
+            href="https://fonts.google.com/icons?icon.size=24&icon.color=%235f6368&icon.style=Rounded" target="_blank"
+            rel="noopener" style="color: var(--text-link);">Explorar ícones →</a></p>
       </div>
       <div class="icon-grid">
         <div class="icon-item"><span class="material-symbols-rounded">dashboard</span><span>dashboard</span></div>
@@ -1355,7 +3599,8 @@
         <div class="icon-item"><span class="material-symbols-rounded">credit_card</span><span>credit_card</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">analytics</span><span>analytics</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">settings</span><span>settings</span></div>
-        <div class="icon-item"><span class="material-symbols-rounded">notifications</span><span>notifications</span></div>
+        <div class="icon-item"><span class="material-symbols-rounded">notifications</span><span>notifications</span>
+        </div>
         <div class="icon-item"><span class="material-symbols-rounded">search</span><span>search</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">add_circle</span><span>add_circle</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">check_circle</span><span>check_circle</span></div>
@@ -1364,101 +3609,119 @@
         <div class="icon-item"><span class="material-symbols-rounded">warning</span><span>warning</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">close</span><span>close</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">menu</span><span>menu</span></div>
-        <div class="icon-item"><span class="material-symbols-rounded">arrow_forward</span><span>arrow_forward</span></div>
+        <div class="icon-item"><span class="material-symbols-rounded">arrow_forward</span><span>arrow_forward</span>
+        </div>
         <div class="icon-item"><span class="material-symbols-rounded">download</span><span>download</span></div>
         <div class="icon-item"><span class="material-symbols-rounded">filter_list</span><span>filter_list</span></div>
       </div>
     </section>
 
-    <!-- ═══ SHADCN MAPPING ═══ -->
-    <section id="tokens">
-      <div class="section-header">
-        <div class="overline">Tokens</div>
-        <h2>Mapeamento shadcn/ui</h2>
-        <p>Como as CSS variables do shadcn mapeiam para a paleta Ume.</p>
-      </div>
-      <table class="token-table">
-        <thead><tr><th>shadcn Variable</th><th>Ume Color</th><th>HSL Value</th><th>Uso</th></tr></thead>
-        <tbody>
-          <tr><td><code>--primary</code></td><td><span class="swatch-inline" style="background:#09CF7C;"></span>Verde Claro</td><td>153 93% 42%</td><td>Botão primário, CTA, accent</td></tr>
-          <tr><td><code>--secondary</code></td><td><span class="swatch-inline" style="background:#014751;"></span>Verde Escuro</td><td>188 97% 16%</td><td>Sidebar, seções de autoridade</td></tr>
-          <tr><td><code>--accent</code></td><td><span class="swatch-inline" style="background:#974AFD;"></span>Roxo</td><td>267 97% 64%</td><td>Links, focus ring, ações secundárias</td></tr>
-          <tr><td><code>--destructive</code></td><td><span class="swatch-inline" style="background:#E53E3E;"></span>Error Red</td><td>0 72% 51%</td><td>Erros, ações destrutivas</td></tr>
-          <tr><td><code>--muted</code></td><td><span class="swatch-inline" style="background:#F2F2F2;"></span>Cinza Claro</td><td>0 0% 95%</td><td>Backgrounds neutros</td></tr>
-          <tr><td><code>--background</code></td><td><span class="swatch-inline" style="background:#FFFFFF;"></span>Branco</td><td>0 0% 100%</td><td>Background de página</td></tr>
-          <tr><td><code>--foreground</code></td><td><span class="swatch-inline" style="background:#1A1A1A;"></span>Cinza Escuro</td><td>0 0% 10%</td><td>Texto principal</td></tr>
-          <tr><td><code>--ring</code></td><td><span class="swatch-inline" style="background:#974AFD;"></span>Roxo</td><td>267 97% 64%</td><td>Focus ring (acessibilidade)</td></tr>
-          <tr><td><code>--sidebar-background</code></td><td><span class="swatch-inline" style="background:#014751;"></span>Verde Escuro</td><td>188 97% 16%</td><td>Sidebar background</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ═══ CONTEXT TABLE ═══ -->
-    <section id="cor-por-contexto">
-      <div class="section-header">
-        <div class="overline">Usage</div>
-        <h2>Lógica de Cor por Contexto</h2>
-      </div>
-      <table class="token-table">
-        <thead><tr><th>Contexto</th><th>Background</th><th>Texto</th><th>Accent</th></tr></thead>
-        <tbody>
-          <tr><td>Autoridade / Institucional</td><td>Dark Gradient ou Verde Escuro</td><td>Branco / Verde Claro</td><td>Verde Claro</td></tr>
-          <tr><td>Conteúdo / Informativo</td><td>Branco ou Cinza Claro</td><td>Cinza Escuro</td><td>Verde Médio ou Roxo</td></tr>
-          <tr><td>Dados / Analytics</td><td>Branco ou Cinza Claro</td><td>Cinza Escuro</td><td>Chart palette</td></tr>
-          <tr><td>Marca / Cultura</td><td>Light Gradient</td><td>Cinza Escuro / Verde Escuro</td><td>Verde Escuro</td></tr>
-          <tr><td>Destaque / CTA</td><td>Dark Gradient ou Verde Escuro</td><td>Branco</td><td>Verde Claro</td></tr>
-        </tbody>
-      </table>
-    </section>
-
     <footer style="text-align: center; padding: 48px 0; color: var(--text-muted); font-size: 13px;">
-      <p><img src="logos/ume-cinza-escuro.svg" alt="Ume" class="logo-light" style="height: 18px; vertical-align: middle; margin-right: 6px;"><img src="logos/ume-verde-claro.svg" alt="Ume" class="logo-dark" style="height: 18px; vertical-align: middle; margin-right: 6px;">Design System v2.0</p>
-      <p style="margin-top: 4px; font-size: 11px; color: #CCC;">Aeonik (body) · Aeonik Fono (display)</p>
+      <p><img src="logos/ume-cinza-escuro.svg" alt="Ume" class="logo-light"
+          style="height: 18px; vertical-align: middle; margin-right: 6px;"><img src="logos/ume-verde-claro.svg"
+          alt="Ume" class="logo-dark" style="height: 18px; vertical-align: middle; margin-right: 6px;">Design System
+        v2.0</p>
     </footer>
 
   </div>
-<button class="ds-back-top" id="back-top" aria-label="Voltar ao topo">
-  <span class="material-symbols-rounded" style="font-size:24px;">keyboard_arrow_up</span>
-</button>
-<script>
-  (function() {
-    const toggle = document.getElementById('theme-toggle');
-    const icon = toggle.querySelector('.material-symbols-rounded');
-    const stored = localStorage.getItem('ume-theme');
+  <button class="ds-back-top" id="back-top" aria-label="Voltar ao topo">
+    <span class="material-symbols-rounded" style="font-size:24px;">keyboard_arrow_up</span>
+  </button>
+  <script>
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      const icon = toggle.querySelector('.material-symbols-rounded');
+      const stored = localStorage.getItem('ume-theme');
 
-    if (stored === 'dark') {
-      document.documentElement.classList.add('dark');
-      icon.textContent = 'light_mode';
-    }
+      if (stored === 'dark') {
+        document.documentElement.classList.add('dark');
+        icon.textContent = 'light_mode';
+      }
 
-    toggle.addEventListener('click', function() {
-      const isDark = document.documentElement.classList.toggle('dark');
-      icon.textContent = isDark ? 'light_mode' : 'dark_mode';
-      localStorage.setItem('ume-theme', isDark ? 'dark' : 'light');
-    });
-    // ─── Scroll Spy ───
-    const tocLinks = document.querySelectorAll('.ds-toc a');
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          tocLinks.forEach(function(a) { a.classList.remove('toc-active'); });
-          var active = document.querySelector('.ds-toc a[href="#' + entry.target.id + '"]');
-          if (active) active.classList.add('toc-active');
-        }
+      toggle.addEventListener('click', function () {
+        const isDark = document.documentElement.classList.toggle('dark');
+        icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        localStorage.setItem('ume-theme', isDark ? 'dark' : 'light');
       });
-    }, { rootMargin: '-80px 0px -60% 0px' });
-    sections.forEach(function(s) { observer.observe(s); });
+      // ─── Scroll Spy ───
+      const tocLinks = document.querySelectorAll('.ds-toc a');
+      const sections = document.querySelectorAll('section[id]');
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(function (a) { a.classList.remove('toc-active'); });
+            var active = document.querySelector('.ds-toc a[href="#' + entry.target.id + '"]');
+            if (active) active.classList.add('toc-active');
+          }
+        });
+      }, { rootMargin: '-80px 0px -60% 0px' });
+      sections.forEach(function (s) { observer.observe(s); });
 
-    // ─── Back to Top ───
-    var backTop = document.getElementById('back-top');
-    window.addEventListener('scroll', function() {
-      backTop.classList.toggle('visible', window.scrollY > 600);
-    }, { passive: true });
-    backTop.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-</script>
+      // ─── Copy HEX (color cards) ───
+      document.querySelectorAll('.copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var hex = btn.getAttribute('data-hex');
+          navigator.clipboard.writeText(hex).then(function () {
+            var icon = btn.querySelector('.material-symbols-rounded');
+            icon.textContent = 'check';
+            btn.classList.add('copied');
+            setTimeout(function () {
+              icon.textContent = 'content_copy';
+              btn.classList.remove('copied');
+            }, 1500);
+          });
+        });
+      });
+
+      // ─── Copy Props (accordion) ───
+      document.querySelectorAll('.props-copy').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var code = btn.parentElement.querySelector('code');
+          var text = code.getAttribute('data-props') || code.textContent;
+          navigator.clipboard.writeText(text).then(function () {
+            var icon = btn.querySelector('.material-symbols-rounded');
+            icon.textContent = 'check';
+            btn.classList.add('copied');
+            setTimeout(function () {
+              icon.textContent = 'content_copy';
+              btn.classList.remove('copied');
+            }, 1500);
+          });
+        });
+      });
+
+      // ─── Copy HEX (scale steps) ───
+      document.querySelectorAll('.scale-strip .step').forEach(function (step) {
+        step.addEventListener('click', function () {
+          var hex = step.getAttribute('data-hex');
+          if (!hex) return;
+          navigator.clipboard.writeText(hex).then(function () {
+            var hexEl = step.querySelector('.step-hex');
+            var original = hexEl.textContent;
+            var labelNode = step.firstChild;
+            var originalLabel = labelNode.textContent;
+            labelNode.textContent = '';
+            hexEl.textContent = 'Copiado!';
+            hexEl.style.opacity = '1';
+            setTimeout(function () {
+              labelNode.textContent = originalLabel;
+              hexEl.textContent = original;
+              hexEl.style.opacity = '';
+            }, 1500);
+          });
+        });
+      });
+
+      // ─── Back to Top ───
+      var backTop = document.getElementById('back-top');
+      window.addEventListener('scroll', function () {
+        backTop.classList.toggle('visible', window.scrollY > 600);
+      }, { passive: true });
+      backTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 </body>
+
 </html>
