@@ -1914,6 +1914,90 @@
         padding: 32px;
         min-height: 300px;
       }
+
+      .spacing-grid { gap: 12px; }
+      .ds-nav-inner { padding: 0 24px; }
+      .page { padding: 0 24px; }
+      section { margin-bottom: 56px; }
+      .section-header { margin-bottom: 28px; }
+      .section-header h2 { font-size: 28px; }
+
+      /* Typography showcase — stack rows vertically */
+      .type-showcase { padding: 24px; }
+      .type-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .type-label { width: auto; }
+      .type-meta { width: auto; text-align: left; }
+
+      /* Glass & glow padding reduction */
+      .glass-showcase { padding: 24px; }
+      .glow-showcase { padding: 24px; gap: 16px; }
+
+      /* Breakpoint rows — wrap on smaller screens */
+      .bp-row { flex-wrap: wrap; }
+      .bp-desc { width: 100%; }
+
+      /* Performance grid */
+      .perf-grid { grid-template-columns: 1fr; }
+
+      /* Readability rows */
+      .readability-row {
+        grid-template-columns: 1fr;
+      }
+
+      /* Usage and breakpoint tables — horizontal scroll */
+      .usage-table,
+      .token-table,
+      .zindex-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ds-nav-inner { padding: 0 20px; }
+      .ds-nav-links { gap: 12px; }
+      .ds-nav-links a { font-size: 12px; }
+      .page { padding: 0 20px; }
+      section { margin-bottom: 40px; }
+      .section-header { margin-bottom: 24px; }
+      .section-header h2 { font-size: 24px; }
+      .section-header p { font-size: 14px; }
+      .cover { padding: 24px; min-height: 240px; }
+      .cover h1 { font-size: 28px; }
+      .color-grid, .elevation-grid, .surface-demo { grid-template-columns: 1fr; }
+      .easing-grid { grid-template-columns: 1fr; }
+      .gradient-showcase, .glow-showcase { gap: 16px; }
+
+      /* Type samples — clamp large font sizes */
+      .type-sample { overflow-wrap: break-word; word-break: break-word; }
+      .type-showcase { padding: 16px; }
+
+      /* Duration row — tighter on small screens */
+      .duration-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .duration-row .duration-desc { display: none; }
+      .duration-row .duration-bar-track { display: none; }
+
+      /* Breakpoint rows — stack fully */
+      .bp-row { gap: 8px; }
+      .bp-name { width: auto; }
+      .bp-value { width: auto; }
+      .bp-desc { width: 100%; font-size: 12px; }
+      .bp-bar-wrap { width: 100%; }
+
+      /* Glass & glow further reduction */
+      .glass-showcase { padding: 16px; gap: 16px; }
+      .glow-showcase { padding: 16px; }
+
+      /* Spacing blocks */
+      .spacing-block { min-width: 44px; }
     }
 
     /* ─── Table of Contents ─── */
@@ -2275,6 +2359,7 @@
         <h2>Mapeamento shadcn/ui</h2>
         <p>Como as CSS variables do shadcn mapeiam para a paleta Ume.</p>
       </div>
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="token-table">
         <thead>
           <tr>
@@ -2341,6 +2426,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <hr class="section-divider">
@@ -2351,6 +2437,7 @@
         <div class="overline">Usage</div>
         <h2>Lógica de Cor por Contexto</h2>
       </div>
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="token-table">
         <thead>
           <tr>
@@ -2393,6 +2480,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <hr class="section-divider">
@@ -2867,6 +2955,7 @@
       </div>
 
       <!-- Semantic spacing usage -->
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="usage-table">
         <thead>
           <tr>
@@ -2915,6 +3004,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <hr class="section-divider">
@@ -3003,6 +3093,7 @@
       </div>
 
       <!-- Common layouts -->
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <div style="margin-top: 24px;">
         <div style="font-weight: 500; margin-bottom: 16px; font-size: 14px;">Layouts comuns no grid de 12 colunas</div>
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-bottom: 12px;">
@@ -3037,6 +3128,7 @@
             style="grid-column: span 4; background: rgba(9,207,124,0.06); border: 1px solid rgba(9,207,124,0.2); border-radius: 4px; padding: 8px; text-align: center; font-size: 11px; color: var(--text-muted);">
             4 — Terço</div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -3102,6 +3194,7 @@
       </div>
 
       <!-- Behavior table -->
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="usage-table" style="margin-top: 24px;">
         <thead>
           <tr>
@@ -3157,6 +3250,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <hr class="section-divider">
@@ -3292,6 +3386,7 @@
             níveis.</span></h3>
       </div>
 
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="zindex-table">
         <thead>
           <tr>
@@ -3395,6 +3490,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <hr class="section-divider">
