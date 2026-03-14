@@ -1323,6 +1323,8 @@
       display: flex;
       gap: 0;
       border-bottom: 1px solid var(--border-default);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .tab {
@@ -1332,6 +1334,7 @@
       color: var(--text-secondary);
       cursor: pointer;
       border-bottom: 2px solid transparent;
+      white-space: nowrap;
       transition: all 0.15s;
     }
 
@@ -1464,108 +1467,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* ═══ SIDEBAR PREVIEW ═══ */
-    .sidebar-preview {
-      display: flex;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border-default);
-      background: var(--surface-raised);
-      min-height: 400px;
-    }
-
-    .sidebar {
-      width: 260px;
-      background: var(--ume-verde-escuro);
-      padding: 24px 16px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sidebar-logo {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--ume-verde-claro);
-      padding: 0 8px 24px;
-    }
-
-    .sidebar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-
-    .sidebar-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
-      font-weight: 400;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .sidebar-item:hover {
-      background: rgba(255, 255, 255, 0.06);
-      color: #FFF;
-    }
-
-    .sidebar-item.active {
-      background: rgba(9, 207, 124, 0.12);
-      color: var(--ume-verde-claro);
-    }
-
-    .sidebar-item .material-symbols-rounded {
-      font-size: 20px;
-    }
-
-    .sidebar-content {
-      flex: 1;
-      padding: 24px 32px;
-    }
-
-    /* ═══ EMPTY STATE ═══ */
-    .empty-state {
-      text-align: center;
-      padding: 64px 32px;
-    }
-
-    .empty-state .icon-circle {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(9, 207, 124, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .empty-state .icon-circle .material-symbols-rounded {
-      font-size: 28px;
-      color: var(--ume-verde-claro);
-    }
-
-    .empty-state h3 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-
-    .empty-state p {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-secondary);
-      max-width: 360px;
-      margin: 0 auto 20px;
-      line-height: 1.5;
-    }
 
     /* ═══ STAGGER DEMO ═══ */
     @keyframes rise-in {
@@ -1605,19 +1506,44 @@
       color: var(--text-primary);
     }
 
+    /* ─── Responsive Grid Utilities ─── */
+    .grid-2 { }
+    .grid-3 { }
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 480px) {
+      .grid-2 { grid-template-columns: 1fr !important; }
+    }
+
     /* ═══ RESPONSIVE ═══ */
     @media (max-width: 768px) {
       .card-grid {
         grid-template-columns: 1fr;
       }
 
-      .sidebar-preview {
-        flex-direction: column;
-      }
+      .cover { padding: 32px; min-height: 300px; }
+      .cover h1 { font-size: 36px; }
+      .ds-nav-inner { padding: 0 24px; }
+      .page { padding: 0 24px; }
+      section { margin-bottom: 56px; }
+      .section-header { margin-bottom: 28px; }
+      .section-header h2 { font-size: 28px; }
+    }
 
-      .sidebar {
-        width: 100%;
-      }
+    @media (max-width: 480px) {
+      .ds-nav-inner { padding: 0 20px; }
+      .ds-nav-links { gap: 12px; }
+      .ds-nav-links a { font-size: 12px; }
+      .page { padding: 0 20px; }
+      section { margin-bottom: 40px; }
+      .section-header { margin-bottom: 24px; }
+      .section-header h2 { font-size: 24px; }
+      .section-header p { font-size: 14px; }
+      .cover { padding: 24px; min-height: 240px; }
+      .cover h1 { font-size: 28px; }
+      .canvas-cell { padding: 16px; }
+      .component-canvas { margin: 0 -20px 60px; padding-left: 20px; padding-right: 20px; }
     }
 
     /* ─── Table of Contents ─── */
@@ -2088,8 +2014,6 @@
       <a href="#pagination">Pagination</a>
       <a href="#skeleton">Skeleton / Loading</a>
       <a href="#full-loading">Full Page Loading</a>
-      <a href="#sidebar">Sidebar + Page Shell</a>
-      <a href="#empty-state">Empty State</a>
     </nav>
   </aside>
   <div class="page">
@@ -2673,7 +2597,7 @@
 
       <div class="comp-group">
         <h3>Input States</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
           <div class="input-group">
             <label class="input-label">Default</label>
             <input class="input-field" type="text" placeholder="Digite aqui...">
@@ -2707,7 +2631,7 @@
 
       <div class="comp-group">
         <h3>Select, Textarea, Search</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
           <div class="input-group">
             <label class="input-label">Select</label>
             <select class="input-field select-field">
@@ -2732,7 +2656,7 @@
 
       <div class="comp-group">
         <h3>Checkbox, Radio, Switch</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+        <div class="grid-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
           <div>
             <div class="comp-label">Checkbox</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -3153,87 +3077,6 @@
       </div>
     </section>
 
-    <!-- ═══ SIDEBAR + PAGE LAYOUT ═══ -->
-    <section id="sidebar">
-      <div class="section-header">
-        <div class="overline">Layout</div>
-        <h2>Sidebar + Page Shell</h2>
-        <p>Layout padrão do Portal de Parceiros com sidebar em verde escuro.</p>
-      </div>
-      <div class="sidebar-preview">
-        <div class="sidebar">
-          <div class="sidebar-logo"><img src="logos/ume-verde-claro.svg" alt="Ume" style="height: 16px;"></div>
-          <nav class="sidebar-nav">
-            <div class="sidebar-item active">
-              <span class="material-symbols-rounded">dashboard</span>
-              Dashboard
-            </div>
-            <div class="sidebar-item">
-              <span class="material-symbols-rounded">storefront</span>
-              Parceiros
-            </div>
-            <div class="sidebar-item">
-              <span class="material-symbols-rounded">payments</span>
-              Vendas
-            </div>
-            <div class="sidebar-item">
-              <span class="material-symbols-rounded">analytics</span>
-              Relatórios
-            </div>
-            <div class="sidebar-item">
-              <span class="material-symbols-rounded">credit_card</span>
-              Crédito
-            </div>
-            <div class="sidebar-item" style="margin-top: auto;">
-              <span class="material-symbols-rounded">settings</span>
-              Configurações
-            </div>
-          </nav>
-        </div>
-        <div class="sidebar-content">
-          <div class="breadcrumb" style="margin-bottom: 24px;">
-            <a href="#">Dashboard</a>
-            <span class="sep">/</span>
-            <span class="current">Visão geral</span>
-          </div>
-          <h2 style="font-family: var(--font-display); font-size: 24px; font-weight: 500; margin-bottom: 8px;">Bom dia,
-            João</h2>
-          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">Aqui está o resumo da sua
-            operação.</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-            <div class="metric-card" style="padding: 20px;">
-              <div class="metric-value" style="font-size: 28px;">R$ 847K</div>
-              <div class="metric-label" style="font-size: 12px;">Volume hoje</div>
-            </div>
-            <div class="metric-card-glow" style="padding: 20px;">
-              <div class="metric-value" style="font-size: 28px;">342</div>
-              <div class="metric-label" style="font-size: 12px;">Vendas hoje</div>
-            </div>
-            <div class="card card-gradient-top" style="padding: 20px;">
-              <h4 style="font-size: 28px; font-family: var(--font-display); font-weight: 700;">94.7%</h4>
-              <p style="font-size: 12px; font-weight: 500; margin-top: 4px;">Aprovação</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EMPTY STATE ═══ -->
-    <section id="empty-state">
-      <div class="section-header">
-        <div class="overline">Components</div>
-        <h2>Empty State</h2>
-      </div>
-      <div class="comp-group">
-        <div class="empty-state">
-          <div class="icon-circle"><span class="material-symbols-rounded">inbox</span></div>
-          <h3>Nenhum parceiro encontrado</h3>
-          <p>Adicione seu primeiro parceiro para começar a operar com a Ume.</p>
-          <button type="button" class="btn btn-primary btn-md"><span
-              class="material-symbols-rounded">add</span>Adicionar parceiro</button>
-        </div>
-      </div>
-    </section>
 
     <footer style="text-align: center; padding: 48px 0; color: var(--text-muted); font-size: 13px;">
       <p><img src="logos/ume-cinza-escuro.svg" alt="Ume" class="logo-light"
