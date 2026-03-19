@@ -2,15 +2,17 @@
   <img src="https://storage.googleapis.com/prd-static-files-api/brands/ume_new_brand/logo/PNG/LOGO_UME_VERDE%20CLARO_PNG.png" alt="Ume" height="80">
 </p>
 
+
 # Ume Design System
 Design System oficial da Ume — foundations, components e patterns para produtos digitais da marca Ume.
+
 **Live demo site:** https://ume-design-system.vercel.app/
 
-## Estrutura
 
+## Estrutura
 ```
 design-system/
-├── index.html            # Landing page — visão geral do DS
+├── index.html             # Landing page — visão geral do DS
 ├── foundations.html       # Cores, tipografia, grid, espaçamento, elevação, motion, ícones
 ├── components.html        # Componentes UI (shadcn/ui): botões, inputs, cards, tabelas, tabs, badges, alerts, modais
 ├── patterns.html          # Padrões de composição: app shell, sidebar, login, home, dashboard, formulários, mobile
