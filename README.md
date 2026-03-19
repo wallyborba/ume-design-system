@@ -2,7 +2,7 @@
 
 Design System oficial da Ume — foundations, components e patterns para produtos digitais.
 
-**Site:** [https://ume-new-design-system.vercel.app/](https://ume-new-design-system.vercel.app/)
+**Site:** https://ume-design-system.vercel.app/
 
 ## Estrutura
 
