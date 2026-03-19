@@ -168,7 +168,7 @@
       font-size: 56px;
       font-weight: 500;
       color: #FFFFFF;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
       line-height: 1.1;
       margin-bottom: 16px;
     }
@@ -250,20 +250,42 @@
       .cards-grid { grid-template-columns: 1fr; max-width: 400px; }
       .ds-nav-links a { font-size: 13px; }
       .ds-nav-links { gap: 16px; }
+      .ds-nav-inner { padding: 0 24px; }
+      .cover-content { padding: 48px 24px 32px; }
+      .cover-subtitle { margin-bottom: 48px; }
+      .card { padding: 24px; }
+    }
+
+    /* ─── Logo Container ─── */
+    .logo-container {
+      padding: 24px 32px;
+    }
+
+    @media (max-width: 480px) {
+      .ds-nav-inner { padding: 0 20px; }
+      .ds-nav-links { gap: 12px; }
+      .ds-nav-links a { font-size: 12px; }
+      .cover-content { padding: 48px 20px 32px; }
+      .cover-title { font-size: 28px; }
+      .cover-subtitle { font-size: 15px; margin-bottom: 32px; }
+      .card { padding: 24px; }
+      .card-title { font-size: 20px; }
+      .cover-footer { padding: 32px 20px; }
+      .logo-container { padding: 20px 20px; }
     }
   </style>
 </head>
 <body>
 
 
-<div style="padding: 24px 32px;">
+<div class="logo-container">
   <a href="index.html"><img src="logos/ume-verde-claro.svg" alt="Ume" style="height: 28px; display: block;"></a>
 </div>
 
 <div class="cover-content">
   <div class="cover-overline">v2.0 — shadcn/ui</div>
   <h1 class="cover-title">Ume Design System</h1>
-  <p class="cover-subtitle">Tokens, componentes e padrões de página para a plataforma Ume. Construído com Aeonik, glass surfaces e gradient accents.</p>
+  <p class="cover-subtitle">Tokens, componentes e padrões de página para a plataforma Ume.</p>
 
   <div class="cards-grid">
     <a href="foundations.html" class="card-link">

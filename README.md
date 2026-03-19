@@ -6,9 +6,6 @@
 Design System oficial da Ume — foundations, components e patterns para produtos digitais da marca Ume.
 **Live demo site:** https://ume-design-system.vercel.app/
 
-## O que é
-O Ume Design System documenta a identidade visual, os tokens, componentes e padrões de página da plataforma Ume. É a fonte de verdade para qualquer pessoa ou agente que precise construir interfaces baseadas em web consistentes com a marca.
-
 ## Estrutura
 
 ```
