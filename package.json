@@ -1,0 +1,12 @@
+{
+  "name": "ume-design-system",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Ume Design System — documentação de tokens, componentes e patterns",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --no-browser"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

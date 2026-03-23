@@ -14,6 +14,9 @@ Este é um site de documentação estático — **não há build step, bundler o
 | `foundations.html` | Documentação de tokens: cores, tipografia, grid, espaçamento, elevação, motion, ícones |
 | `components.html` | Catálogo de componentes UI com demos visuais |
 | `patterns.html` | Padrões de composição: layouts de página, formulários, estados |
+| `playground.html` | Playground interativo — troque variantes, tamanhos e estados em tempo real |
+| `playground.js` | Engine JS do playground (vanilla, zero framework) |
+| `playground.css` | Estilos específicos do playground |
 
 ### Arquivos de referência (para projetos consumidores)
 
@@ -90,6 +93,57 @@ git push origin main
 ```
 
 Não há CI/CD, testes, ou linting — o site é HTML estático servido diretamente.
+
+Para desenvolvimento local com hot-reload:
+
+```
+npm install
+npm run dev
+```
+
+## Playground
+
+O Playground (`playground.html`) é uma página standalone com componentes interativos. Cada componente é declarado como um `<div class="playground">` com um JSON config dentro.
+
+### Como adicionar um componente ao Playground
+
+1. Crie um bloco `<div class="playground" data-component="nome">` na seção desejada
+2. Dentro, coloque um `<script type="application/json">` com a config:
+
+```json
+{
+  "title": "Nome do Componente",
+  "description": "Descrição breve.",
+  "usage": "Quando/onde usar.",
+  "shadcn": "componente-shadcn-base",
+  "a11y": "Notas de acessibilidade.",
+  "controls": [
+    { "name": "variant", "type": "select", "options": ["a", "b", "c"], "default": "a" },
+    { "name": "disabled", "type": "toggle", "default": false }
+  ],
+  "presets": [
+    { "label": "Exemplo 1", "state": { "variant": "a", "disabled": false } }
+  ],
+  "template": "<button class=\"btn btn-{{variant}}\">Texto</button>"
+}
+```
+
+3. O `playground.js` cuida de toda a interatividade automaticamente
+
+### Template syntax
+
+- `{{var}}` — substitui pelo valor do controle
+- `{{#if var}}...{{/if}}` — condicional (truthy)
+- `{{#unless var}}...{{/unless}}` — condicional (falsy)
+- `{{#eq var "value"}}...{{/eq}}` — igualdade exata
+- Todos suportam aninhamento
+
+### Contribuindo
+
+1. **Para adicionar um componente ao playground:** criar um `<div class="playground">` com JSON config seguindo o padrão existente
+2. **Para modificar um token:** alterar em `tokens.json` primeiro, depois refletir em `globals.css` e `tailwind.config.ts`
+3. **Para modificar visual de um componente:** atualizar o template no playground + os demos estáticos em `components.html`
+4. **Sempre:** atualizar `CHANGELOG.md` com a mudança
 
 ## Tokens
 
