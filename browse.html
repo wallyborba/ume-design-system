@@ -133,6 +133,43 @@
       --feedback-warning-text: #985D06;
       --feedback-info-bg: rgba(1, 71, 81, 0.1);
       --feedback-info-text: #014751;
+
+      /* ─── Sidebar / Glass ─── */
+      /* Sidebar always has dark bg (--ume-verde-escuro), so text/surfaces use white alpha in both themes */
+      --sidebar-bg: var(--ume-verde-escuro);
+      --sidebar-surface: rgba(255, 255, 255, 0.06);
+      --sidebar-surface-hover: rgba(255, 255, 255, 0.1);
+      --sidebar-surface-active: rgba(255, 255, 255, 0.08);
+      --sidebar-border: rgba(255, 255, 255, 0.1);
+      --sidebar-text: rgba(255, 255, 255, 0.75);
+      --sidebar-text-muted: rgba(255, 255, 255, 0.4);
+      --sidebar-text-faint: rgba(255, 255, 255, 0.25);
+      --sidebar-scrollbar: rgba(255, 255, 255, 0.12);
+      --sidebar-scrollbar-hover: rgba(255, 255, 255, 0.25);
+
+      /* ─── Glass / Card surfaces (light) ─── */
+      --glass-surface: rgba(255, 255, 255, 0.6);
+      --glass-surface-hover: rgba(255, 255, 255, 0.8);
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --glass-border-hover: rgba(0, 0, 0, 0.2);
+      --glass-border-accent: rgba(9, 207, 124, 0.4);
+      --glass-text: rgba(0, 0, 0, 0.7);
+      --glass-text-muted: rgba(0, 0, 0, 0.5);
+
+      /* ─── Accent alpha ─── */
+      --accent-subtle: rgba(9, 207, 124, 0.08);
+      --accent-light: rgba(9, 207, 124, 0.12);
+      --accent-border: rgba(9, 207, 124, 0.25);
+      --accent-border-strong: rgba(9, 207, 124, 0.4);
+      --accent-glow: rgba(9, 207, 124, 0.04);
+      --purple-subtle: rgba(151, 74, 253, 0.04);
+      --purple-border: rgba(151, 74, 253, 0.1);
+
+      /* ─── Overlay ─── */
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --selection-bg: rgba(9, 207, 124, 0.25);
+      --scrollbar-thumb: rgba(128, 128, 128, 0.25);
+      --scrollbar-thumb-hover: rgba(128, 128, 128, 0.4);
     }
 
     .dark {
@@ -166,6 +203,41 @@
       --feedback-warning-text: #FACC15;
       --feedback-info-bg: rgba(1, 71, 81, 0.12);
       --feedback-info-text: #6FB8C8;
+
+      /* ─── Sidebar / Glass (dark) ─── */
+      --sidebar-surface: rgba(255, 255, 255, 0.06);
+      --sidebar-surface-hover: rgba(255, 255, 255, 0.1);
+      --sidebar-surface-active: rgba(255, 255, 255, 0.08);
+      --sidebar-border: rgba(255, 255, 255, 0.1);
+      --sidebar-text: rgba(255, 255, 255, 0.75);
+      --sidebar-text-muted: rgba(255, 255, 255, 0.4);
+      --sidebar-text-faint: rgba(255, 255, 255, 0.25);
+      --sidebar-scrollbar: rgba(255, 255, 255, 0.12);
+      --sidebar-scrollbar-hover: rgba(255, 255, 255, 0.25);
+
+      /* ─── Glass / Card surfaces (dark) ─── */
+      --glass-surface: rgba(255, 255, 255, 0.06);
+      --glass-surface-hover: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-border-hover: rgba(255, 255, 255, 0.25);
+      --glass-border-accent: rgba(9, 207, 124, 0.35);
+      --glass-text: rgba(255, 255, 255, 0.8);
+      --glass-text-muted: rgba(255, 255, 255, 0.5);
+
+      /* ─── Accent alpha (dark) ─── */
+      --accent-subtle: rgba(9, 207, 124, 0.08);
+      --accent-light: rgba(9, 207, 124, 0.12);
+      --accent-border: rgba(9, 207, 124, 0.25);
+      --accent-border-strong: rgba(9, 207, 124, 0.4);
+      --accent-glow: rgba(9, 207, 124, 0.04);
+      --purple-subtle: rgba(151, 74, 253, 0.04);
+      --purple-border: rgba(151, 74, 253, 0.1);
+
+      /* ─── Overlay (dark) ─── */
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --selection-bg: rgba(9, 207, 124, 0.25);
+      --scrollbar-thumb: rgba(128, 128, 128, 0.25);
+      --scrollbar-thumb-hover: rgba(128, 128, 128, 0.4);
     }
 
     body {
